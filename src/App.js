@@ -16,26 +16,28 @@ async function getGradient() {
   return styleVal;
 }
 
-// let AppStyle;
-// getGradient().then(result => {
-//   console.log(result);
-//   AppStyle = {
-//     backgroundImage: result
-//   }
-//   console.log(AppStyle);
-// })
-
-// console.log(AppStyle)
-
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      style: {}
+    };
+  }
+
+  componentDidMount() {
+    getGradient().then(result => {
+      this.setState({
+        style: {
+          backgroundImage: result
+        }
+      });
+      console.log(result);
+    })
   }
 
   render() {
     return (
-      <div className="App">
+      <div className="App" style={this.state.style}>
         insert app here
       </div>
     );
