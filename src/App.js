@@ -1,3 +1,4 @@
+import React from 'react';
 import './App.css';
 
 async function getGradient() {
@@ -26,12 +27,19 @@ async function getGradient() {
 
 // console.log(AppStyle)
 
-function App() {
-  return (
-    <div className="App" style={AppStyle}>
-      insert app here
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    return (
+      <div className="App">
+        insert app here
+      </div>
+    );
+  }
 }
 
 export default App;
