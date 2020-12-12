@@ -20,7 +20,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      style: {}
+      style: {},
+      loaded: false
     };
   }
 
@@ -29,15 +30,17 @@ class App extends React.Component {
       this.setState({
         style: {
           backgroundImage: result
-        }
+        },
+        loaded: true
       });
       console.log(result);
     })
   }
 
   render() {
+    const classes = this.state.loaded ? 'App' : 'App hidden';
     return (
-      <div className="App" style={this.state.style}>
+      <div className={classes} style={this.state.style}>
         insert app here
       </div>
     );
