@@ -18,27 +18,32 @@ function getGradient() {
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.mountStyle = this.mountStyle.bind(this)
     this.state = {
-      style: {},
-      loaded: false
+      style: {
+        opacity: 0,
+      }
     };
   }
 
-  componentDidMount() {
+  mountStyle() {
     const gradient = getGradient();
-    this.setState((state, props) => ({
+    this.setState({
       style: {
-        backgroundImage: gradient
-      },
-      loaded: true
-    }));
+        backgroundImage: gradient,
+        opacity: 1
+      }
+    });
     console.log(gradient);
   }
 
+  componentDidMount() {
+    setTimeout(this.mountStyle, 10);
+  }
+
   render() {
-    const classes = this.state.loaded ? 'App' : 'App hidden';
     return (
-      <div className={classes} style={this.state.style}>
+      <div className='App' style={this.state.style}>
         insert app here
       </div>
     );
