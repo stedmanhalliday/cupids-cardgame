@@ -1,9 +1,8 @@
 import React from 'react';
 import './App.css';
+import gradients from './data/gradients.json';
 
-async function getGradient() {
-  const response = await fetch("https://raw.githubusercontent.com/itmeo/webgradients/master/gradients-parsed.json");
-  const gradients = await response.json();
+function getGradient() {
   // select random gradient from library and build style string
   const swatch = gradients[Math.floor(Math.random()*gradients.length)];
   const deg = swatch.deg;
@@ -26,15 +25,14 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    getGradient().then(result => {
-      this.setState({
-        style: {
-          backgroundImage: result
-        },
-        loaded: true
-      });
-      console.log(result);
-    })
+    const gradient = getGradient();
+    this.setState((state, props) => ({
+      style: {
+        backgroundImage: gradient
+      },
+      loaded: true
+    }));
+    console.log(gradient);
   }
 
   render() {
