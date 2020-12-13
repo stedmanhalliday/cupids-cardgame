@@ -44,7 +44,7 @@ class App extends React.Component {
   render() {
     return (
       <div className='App' style={this.state.style}>
-        insert app here
+        <div>app content</div>
       </div>
     );
   }
