@@ -8,8 +8,8 @@ class Card extends React.Component {
 
     render() {
         return (
-            <div className="Card">
-                card content
+            <div className="Card flex border-box p-4 bg-white rounded-lg shadow-lg font-serif font-medium text-xl text-center items-center text-red-400">
+                <p>Art, music, and creativity</p>
             </div>
         );
     }

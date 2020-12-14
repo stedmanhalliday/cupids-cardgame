@@ -43,7 +43,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='App' style={this.state.style}>
+      <div className='flex h-screen transition-opacity duration-1000 justify-center items-center' style={this.state.style}>
         <Card />
       </div>
     );
