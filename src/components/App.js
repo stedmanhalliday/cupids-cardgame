@@ -1,7 +1,6 @@
 import React from 'react';
-import './App.css';
-import Card from './components/Card.js';
-import gradients from './data/gradients.json';
+import Card from './Card.js';
+import gradients from '../data/gradients.json';
 
 function getGradient() {
   // select random gradient from library and build style string
