@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Card from './components/Card.js';
 import gradients from './data/gradients.json';
 
 function getGradient() {
@@ -44,7 +45,7 @@ class App extends React.Component {
   render() {
     return (
       <div className='App' style={this.state.style}>
-        <div>app content</div>
+        <Card />
       </div>
     );
   }
