@@ -54,6 +54,7 @@ class App extends React.Component {
     return (
       <main className={this.state.flipped ? "App modal" : "App"} style={this.state.style}>
         <Decks flipCard={this.flipCard} />
+        <div className={this.state.flipped ? "overlay" : "overlay hidden"}></div>
       </main>
     );
   }

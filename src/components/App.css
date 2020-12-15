@@ -7,4 +7,8 @@
             @apply opacity-50;
         }
     }
+
+    & .overlay {
+        @apply w-full h-full fixed;
+    }
 }
