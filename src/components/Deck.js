@@ -11,7 +11,7 @@ class Deck extends React.Component {
     render() {
         return (
             <div className="Deck relative flex-none">
-                <Card frontText={this.props.deckName} backText="If your life were a movie, what musician or band would create the soundtrack?" />
+                <Card promptGroup={this.props.deckName} prompt="Do you have a favorite artist (includes musicians)?" />
             </div>
         );
     }

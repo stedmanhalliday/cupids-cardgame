@@ -16,8 +16,13 @@
         & .back {
             transform: rotateY(180deg);
 
-            & h2 {
+            & .prompt-group {
                 font-size: .5rem;
+                letter-spacing: .2em;
+            }
+
+            & .prompt {
+                hyphens: auto;
             }
         }
     }
