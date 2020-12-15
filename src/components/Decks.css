@@ -1,13 +1,13 @@
 .Decks {
 
-    &::before, &::after {
-      content: '';
-      min-width: 3rem;
-      @apply flex-auto h-px;
-    }
-    
-    & .Deck {
-        width: var(--card-w);
-        height: var(--card-h);
-    }
+  &::before, &::after {
+    content: '';
+    min-width: 3rem;
+    @apply flex-auto h-px;
+  }
+  
+  & .Deck {
+      width: var(--card-w);
+      height: var(--card-h);
+  }
 }

@@ -1,0 +1,10 @@
+.App {
+    @apply flex overflow-scroll h-screen transition-opacity duration-1000 items-center;
+
+    &.modal {
+
+        & .Card:not(.flipped) {
+            @apply opacity-50;
+        }
+    }
+}

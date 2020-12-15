@@ -7,7 +7,7 @@ class Card extends React.Component {
         this.flipCard = this.flipCard.bind(this);
         this.state = {
             prompt: "",
-            isFlipped: false
+            flipped: false
         };
     }
 
@@ -22,15 +22,15 @@ class Card extends React.Component {
     flipCard() {
         this.props.flipCard();
         this.setState({
-            isFlipped: !this.state.isFlipped
+            flipped: !this.state.flipped
         });
     }
 
     render() {
         return (
-            <div className={this.state.isFlipped ? "Card flipped" : "Card"} onClick={this.flipCard}>
+            <div className={this.state.flipped ? "Card flipped" : "Card"} onClick={this.flipCard}>
                 <div className="faces relative h-full transition-all duration-500">
-                    <div className="front bg-pink-50 px-6 pb-8 justify-center font-serif text-center text-red-400 uppercase tracking-widest">
+                    <div className="front bg-pink-50 px-6 pb-32 justify-center font-serif text-center text-red-400 uppercase tracking-widest">
                         <h2 className="prompt-group  flex items-center h-24 p-4 border-4 border-double border-red-200 rounded-sm">{this.props.promptGroup}</h2>
                     </div>
                     <div className="back justify-between bg-white px-4 py-6 font-serif text-red-400">

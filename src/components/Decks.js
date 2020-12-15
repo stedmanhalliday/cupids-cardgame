@@ -11,11 +11,11 @@ class Decks extends React.Component {
     render() {
         return (
             <section className="Decks flex overflow-scroll w-full h-full items-center space-x-6 transition-all">
-                <Deck flipCard={this.props.flipCard} deckName="Pleasure to meet you" />
-                <Deck flipCard={this.props.flipCard} deckName="'Tis the season" />
-                <Deck flipCard={this.props.flipCard} deckName="Art, music &amp; creativity" />
-                <Deck flipCard={this.props.flipCard} deckName="Looking back" />
-                <Deck flipCard={this.props.flipCard} deckName="Moving forward" />
+                <Deck flipCard={this.props.flipCard} promptGroup="Pleasure to meet you" />
+                <Deck flipCard={this.props.flipCard} promptGroup="'Tis the season" />
+                <Deck flipCard={this.props.flipCard} promptGroup="Art, music &amp; creativity" />
+                <Deck flipCard={this.props.flipCard} promptGroup="Looking back" />
+                <Deck flipCard={this.props.flipCard} promptGroup="Moving forward" />
             </section>
         );
     }

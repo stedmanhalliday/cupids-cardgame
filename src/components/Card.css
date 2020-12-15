@@ -1,5 +1,5 @@
 .Card {
-    @apply cursor-pointer absolute top-1/2 left-1/2 transition-all transform-gpu -translate-x-2/4 -translate-y-2/4;
+    @apply cursor-pointer absolute top-1/2 left-1/2 transition-all duration-300 transform-gpu -translate-x-2/4 -translate-y-2/4;
     perspective: 1000px;
     width: var(--card-w);
     height: var(--card-h);

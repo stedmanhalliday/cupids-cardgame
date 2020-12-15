@@ -24,7 +24,7 @@ class App extends React.Component {
       style: {
         opacity: 0
       },
-      isFlipped: false
+      flipped: false
     };
   }
 
@@ -45,14 +45,14 @@ class App extends React.Component {
 
   flipCard() {
     this.setState({
-        isFlipped: !this.state.isFlipped
+        flipped: !this.state.flipped
     });
     console.log('flippadelphia');
   }
 
   render() {
     return (
-      <main className="App flex overflow-scroll h-screen transition-opacity duration-1000 items-center" style={this.state.style}>
+      <main className={this.state.flipped ? "App modal" : "App"} style={this.state.style}>
         <Decks flipCard={this.flipCard} />
       </main>
     );
