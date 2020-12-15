@@ -11,7 +11,7 @@ class Card extends React.Component {
 
     handleClick() {
         this.setState({
-            flipped: true
+            flipped: !this.state.flipped
         });
     }
 

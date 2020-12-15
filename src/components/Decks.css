@@ -6,7 +6,7 @@
     }
     
     & .Deck {
-        width: 216px;
-        height: 288px;
+        width: var(--card-w);
+        height: var(--card-h);
     }
 }

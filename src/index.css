@@ -4,3 +4,8 @@
 
 @import "./components/Decks.css";
 @import "./components/Card.css";
+
+:root {
+    --card-w: 13.5rem;
+    --card-h: 18rem;
+}
