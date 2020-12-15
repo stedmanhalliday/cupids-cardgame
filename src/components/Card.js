@@ -3,13 +3,33 @@ import React from 'react';
 class Card extends React.Component {
     constructor(props){
         super(props);
-        this.state = {};
+        this.handleClick = this.handleClick.bind(this);
+        this.state = {
+            flipped: false
+        };
+    }
+
+    handleClick() {
+        this.setState({
+            flipped: true
+        });
     }
 
     render() {
         return (
-            <div className="Card flex border-box p-4 bg-white rounded-lg shadow-lg font-serif font-medium text-2xl text-center items-center text-red-400">
-                <p>Lorem ipsum dolor sit amet</p>
+            <div className={this.state.flipped ? "Card flipped" : "Card"} onClick={this.handleClick}>
+                <div className="faces relative h-full transition-all duration-500">
+                    <div className="front bg-pink-50 px-6 pb-8 justify-center font-serif text-center text-red-400 uppercase tracking-widest">
+                        <p className="p-4 border-4 border-double border-red-200 rounded-sm">{this.props.frontText}</p>
+                    </div>
+                    <div className="back justify-between bg-white px-4 py-6 font-serif text-red-400">
+                        <div className="divide-y divide-red-200">
+                            <h2 className="pb-4 uppercase tracking-widest">{this.props.frontText}</h2>
+                            <p className="pt-3 text-lg">{this.props.backText}</p>
+                        </div>
+                        <div className="self-center w-4 h-4 rounded-full border border-red-300 bg-red-100"></div>
+                    </div>
+                </div>
             </div>
         );
     }

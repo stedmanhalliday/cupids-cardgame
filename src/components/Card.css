@@ -1,4 +1,35 @@
 .Card {
-    width: 210px;
-    height: 280px;
+    @apply absolute w-full h-full cursor-pointer;
+    perspective: 1000px;
+
+    & .faces {
+        transform-style: preserve-3d;
+        @apply shadow-lg;
+
+        & .front, & .back {
+            @apply flex flex-col box-border w-full h-full absolute rounded-lg;
+            backface-visibility: hidden;
+        }
+
+        & .back {
+            transform: rotateY(180deg);
+
+            & h2 {
+                font-size: .5rem;
+            }
+        }
+    }
+
+    &.flipped {
+        cursor: auto;
+        position: fixed;
+        z-index: 10;
+        left: 50%;
+        transform: translateX(-50%);
+
+        & .faces {
+            transform: rotateY(180deg);
+            @apply shadow-2xl;
+        }
+    }
 }

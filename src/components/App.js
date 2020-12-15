@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from './Card.js';
+import Decks from './Decks.js'
 import gradients from '../data/gradients.json';
 
 function getGradient() {
@@ -18,10 +18,10 @@ function getGradient() {
 class App extends React.Component {
   constructor(props) {
     super(props);
-    this.mountStyle = this.mountStyle.bind(this)
+    this.mountStyle = this.mountStyle.bind(this);
     this.state = {
       style: {
-        opacity: 0,
+        opacity: 0
       }
     };
   }
@@ -43,9 +43,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='flex h-screen transition-opacity duration-1000 justify-center items-center' style={this.state.style}>
-        <Card />
-      </div>
+      <section className="flex h-screen transition-opacity duration-1000 items-center" style={this.state.style}>
+        <Decks />
+      </section>
     );
   }
 }
