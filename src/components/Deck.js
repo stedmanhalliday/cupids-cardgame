@@ -11,7 +11,7 @@ class Deck extends React.Component {
     render() {
         return (
             <div className="Deck relative flex-none">
-                <Card promptGroup={this.props.deckName} prompt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut arcu at velit rutrum sagittis vel nec leo. Maecenas leo?" />
+                <Card flipCard={this.props.flipCard} promptGroup={this.props.deckName} prompt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut arcu at velit rutrum sagittis vel nec leo. Maecenas leo?" />
             </div>
         );
     }

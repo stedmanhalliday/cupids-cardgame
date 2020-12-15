@@ -19,10 +19,12 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.mountStyle = this.mountStyle.bind(this);
+    this.flipCard = this.flipCard.bind(this);
     this.state = {
       style: {
         opacity: 0
-      }
+      },
+      isFlipped: false
     };
   }
 
@@ -41,10 +43,17 @@ class App extends React.Component {
     setTimeout(this.mountStyle, 10);
   }
 
+  flipCard() {
+    this.setState({
+        isFlipped: !this.state.isFlipped
+    });
+    console.log('flippadelphia');
+  }
+
   render() {
     return (
       <main className="App flex overflow-scroll h-screen transition-opacity duration-1000 items-center" style={this.state.style}>
-        <Decks />
+        <Decks flipCard={this.flipCard} />
       </main>
     );
   }
