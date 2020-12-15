@@ -1,8 +1,9 @@
 .Decks {
+
     &::before, &::after {
       content: '';
-      flex: 1;
       min-width: 3rem;
+      @apply flex-auto h-px;
     }
     
     & .Deck {

@@ -9,3 +9,7 @@
     --card-w: 13.5rem;
     --card-h: 18rem;
 }
+
+body {
+    overscroll-behavior: none;
+}
