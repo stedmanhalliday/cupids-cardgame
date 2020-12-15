@@ -43,9 +43,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <section className="App flex overflow-scroll h-screen transition-opacity duration-1000 items-center" style={this.state.style}>
+      <main className="App flex overflow-scroll h-screen transition-opacity duration-1000 items-center" style={this.state.style}>
         <Decks />
-      </section>
+      </main>
     );
   }
 }
