@@ -1,8 +1,10 @@
 .Card {
-    @apply cursor-pointer absolute top-1/2 left-1/2 transition-all transform -translate-x-2/4 -translate-y-2/4;
+    @apply cursor-pointer absolute top-1/2 left-1/2 transition-all; /*transform -translate-x-2/4 -translate-y-2/4*/
     perspective: 1000px;
     width: var(--card-w);
     height: var(--card-h);
+    transform: translate(-50%, -50%);
+    transform-origin: top left;
 
     & .faces {
         transform-style: preserve-3d;
@@ -23,7 +25,8 @@
     }
 
     &.flipped {
-        @apply cursor-auto fixed z-10 transform scale-x-150 scale-y-150 -translate-x-2/4 -translate-y-2/4;
+        @apply cursor-auto fixed z-10; /* transform scale-x-150 scale-y-150 -translate-x-2/4 -translate-y-2/4;*/
+        transform: scale(1.5) translate(-50%, -50%);
 
         & .faces {
             @apply shadow-2xl;
