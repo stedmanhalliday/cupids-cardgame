@@ -17,7 +17,7 @@ class Card extends React.Component {
 
     render() {
         return (
-            <div ref={this.cardRef} className={this.props.flipped ? "Card flipped" : "Card"} onClick={this.flipCard}>
+            <div ref={this.cardRef} className={this.props.flipped ? "Card flipped" : "Card"} style={this.props.style} onClick={this.flipCard}>
                 <div className="faces relative h-full transition-all duration-500">
                     <div className="front bg-pink-50 px-6 pb-32 justify-center font-serif text-center text-red-400 uppercase tracking-widest">
                         <h2 className="prompt-group flex items-center h-24 p-4 border-4 border-double border-red-200 rounded-sm">{this.props.promptGroup}</h2>
@@ -35,13 +35,21 @@ class FlipCard extends React.Component {
         this.flipCard = this.flipCard.bind(this);
         this.state = {
             prompt: "",
-            flipped: false
+            flipped: false,
+            style: {
+                left: this.props.pos[0],
+                top: this.props.pos[1]
+            }
         };
     }
 
     flipCard() {
         this.setState({
-            flipped: true
+            flipped: true,
+            style: {
+                top: '50%',
+                left: '50%'
+            }
         });
     }
 
@@ -56,7 +64,7 @@ class FlipCard extends React.Component {
 
     render() {
         return(
-            <Card flipCard={()=>{}} promptGroup={this.props.promptGroup} flipped={this.state.flipped} >
+            <Card flipCard={()=>{}} promptGroup={this.props.promptGroup} flipped={this.state.flipped} style={this.state.style} >
                 <div className="back justify-between bg-white px-4 py-6 font-serif text-red-400">
                     <div className="divide-y divide-red-200">
                         <h2 className="prompt-group pb-4 uppercase text-center">{this.props.promptGroup}</h2>

@@ -1,6 +1,5 @@
 .Card {
-    @apply cursor-pointer absolute top-1/2 left-1/2 transition-all duration-300 transform-gpu -translate-x-2/4 -translate-y-2/4;
-    perspective: 1000px;
+    @apply cursor-pointer;
     width: var(--card-w);
     height: var(--card-h);
 
@@ -26,9 +25,14 @@
             }
         }
     }
+}
+
+.overlay .Card {
+    @apply cursor-auto fixed transition-all duration-300 transform-gpu;
+    perspective: 1000px;
 
     &.flipped {
-        @apply cursor-auto fixed z-10 scale-x-150 scale-y-150 -translate-x-2/4 -translate-y-2/4;
+        @apply scale-x-150 scale-y-150 -translate-x-2/4 -translate-y-2/4;
 
         & .faces {
             @apply shadow-2xl;

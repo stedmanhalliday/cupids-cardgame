@@ -10,7 +10,7 @@ class CardView extends React.Component {
     render() {
         return(
             <div className="overlay">
-                <FlipCard promptGroup={this.props.promptGroup} prompt="If your life were a movie, what musician or band would create the soundtrack?" />
+                <FlipCard pos={this.props.pos} promptGroup={this.props.promptGroup} prompt="If your life were a movie, what musician or band would create the soundtrack?" />
             </div>
         );
     }
