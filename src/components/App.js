@@ -1,6 +1,7 @@
 import React from 'react';
-import Decks from './Decks.js'
 import gradients from '../data/gradients.json';
+import Decks from './Decks.js';
+import CardView from './CardView';
 
 function getGradient() {
   // select random gradient from library and build style string
@@ -50,10 +51,15 @@ class App extends React.Component {
   }
 
   render() {
+    let cardView;
+    if (this.state.flipped) {
+      cardView = <CardView />;
+    }
+
     return (
       <main className={this.state.flipped ? "App modal" : "App"} style={this.state.style}>
         <Decks flipCard={this.flipCard} />
-        <div className={this.state.flipped ? "overlay" : "overlay hidden"}></div>
+        {cardView}
       </main>
     );
   }

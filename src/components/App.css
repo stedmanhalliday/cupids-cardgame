@@ -3,7 +3,7 @@
 
     &.modal {
 
-        & .Card:not(.flipped) {
+        & .Decks {
             @apply opacity-50;
         }
     }
