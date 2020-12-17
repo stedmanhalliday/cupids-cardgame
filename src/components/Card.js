@@ -11,8 +11,8 @@ class Card extends React.Component {
     flipCard() {
         const x = this.cardRef.current.getBoundingClientRect().left;
         const y = this.cardRef.current.getBoundingClientRect().top;
-        console.log(x, y, this.props.promptGroup);
-        this.props.flipCard();
+        const promptGroup = this.props.promptGroup;
+        this.props.flipCard(x, y, promptGroup);
     }
 
     render() {
@@ -60,7 +60,7 @@ class FlipCard extends React.Component {
                 <div className="back justify-between bg-white px-4 py-6 font-serif text-red-400">
                     <div className="divide-y divide-red-200">
                         <h2 className="prompt-group pb-4 uppercase text-center">{this.props.promptGroup}</h2>
-                        <p className="prompt pt-3 text-xl">{this.props.prompt}</p>
+                        <p className="prompt pt-3 text-xl">{this.state.prompt}</p>
                     </div>
                     <div className="self-center w-4 h-4 rounded-full border border-red-300 bg-red-100"></div>
                 </div>

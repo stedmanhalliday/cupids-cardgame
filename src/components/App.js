@@ -25,7 +25,9 @@ class App extends React.Component {
       style: {
         opacity: 0
       },
-      flipped: false
+      flipped: false,
+      cardPos: [0, 0],
+      promptGroup: ""
     };
   }
 
@@ -44,16 +46,18 @@ class App extends React.Component {
     setTimeout(this.mountStyle, 10);
   }
 
-  flipCard() {
+  flipCard(x, y, promptGroup) {
     this.setState({
-        flipped: !this.state.flipped
+        flipped: true,
+        cardPos: [x, y],
+        promptGroup: promptGroup
     });
   }
 
   render() {
     let cardView;
     if (this.state.flipped) {
-      cardView = <CardView />;
+      cardView = <CardView promptGroup={this.state.promptGroup} pos={this.state.cardPos} />;
     }
 
     return (
