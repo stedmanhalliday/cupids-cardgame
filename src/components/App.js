@@ -47,7 +47,6 @@ class App extends React.Component {
     this.setState({
         flipped: !this.state.flipped
     });
-    console.log('flippadelphia');
   }
 
   render() {
