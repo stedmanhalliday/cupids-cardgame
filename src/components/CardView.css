@@ -1,0 +1,15 @@
+.discard {
+    right: calc((50vw - .75*var(--card-w))/2.0);
+
+    &:hover {
+        opacity: 100%;
+    }
+
+    &::before {
+        @apply absolute w-full h-full rounded-full bg-pink-100 animate-ping;
+        content: "";
+        animation-duration: 3s;
+        animation-delay: 3s;
+        z-index: -1;
+    }
+}

@@ -10,13 +10,5 @@
 
     & .overlay {
         @apply w-full h-full fixed;
-
-        & .next {
-            right: calc((50vw - .75*var(--card-w))/2.0);
-            
-            &:hover {
-                opacity: 100%;
-            }
-        }
     }
 }

@@ -6,7 +6,7 @@ class CardView extends React.Component {
         super(props);
         this.mountStyle = this.mountStyle.bind(this);
         this.discard = this.discard.bind(this);
-        this.nextRef = React.createRef();
+        this.discardRef = React.createRef();
         this.state = {
             style: {
                 opacity: 0
@@ -26,7 +26,7 @@ class CardView extends React.Component {
 
     componentDidMount() {
         setTimeout(this.mountStyle, 10);
-        this.nextRef.current.ontransitionend = (e) => {
+        this.discardRef.current.ontransitionend = (e) => {
             this.setState({
                 style: {}
             });
@@ -41,7 +41,7 @@ class CardView extends React.Component {
             },
             discarded: true
         });
-        this.nextRef.current.ontransitionend = (e) => { //replace with longer card transition
+        this.discardRef.current.ontransitionend = (e) => { //replace with longer card transition
             this.props.discard();
         }
     }
@@ -49,7 +49,9 @@ class CardView extends React.Component {
     render() {
         return(
             <div className="overlay">
-                <div ref={this.nextRef} onClick={this.discard} style={this.state.style} className="next fixed flex h-16 w-16 items-center justify-center top-1/2 transform translate-x-2/4 -translate-y-2/4 bg-white text-4xl text-red-400 font-sans font-extralight rounded-full shadow-2xl transition-opacity opacity-75 duration-300 cursor-pointer">&rarr;</div>
+                <div ref={this.discardRef} onClick={this.discard} style={this.state.style} className="discard fixed h-16 w-16 top-1/2 transform translate-x-2/4 -translate-y-2/4 transition-opacity opacity-75 duration-300 cursor-pointer">
+                    <span class="flex items-center justify-center w-full h-full rounded-full bg-white shadow-2xl text-red-400 font-sans font-extralight text-4xl">&rarr;</span>
+                </div>
                 <FlipCard pos={this.props.pos} discarded={this.state.discarded} promptGroup={this.props.promptGroup} prompt="If your life were a movie, what musician or band would create the soundtrack?" />
             </div>
         );
