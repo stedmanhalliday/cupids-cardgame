@@ -16,7 +16,6 @@ class Decks extends React.Component {
                 <Deck flipCard={this.props.flipCard} promptGroup="Art, music &amp; creativity" />
                 <Deck flipCard={this.props.flipCard} promptGroup="Looking back" />
                 <Deck flipCard={this.props.flipCard} promptGroup="Moving forward" />
-                <Deck flipCard={this.props.flipCard} promptGroup="Moving forward" />
             </section>
         );
     }
