@@ -21,6 +21,7 @@ class App extends React.Component {
     super(props);
     this.mountStyle = this.mountStyle.bind(this);
     this.flipCard = this.flipCard.bind(this);
+    this.discard = this.discard.bind(this);
     this.state = {
       style: {
         opacity: 0
@@ -54,10 +55,16 @@ class App extends React.Component {
     });
   }
 
+  discard() {
+    this.setState({
+      flipped: false
+    });
+  }
+
   render() {
     let cardView;
     if (this.state.flipped) {
-      cardView = <CardView promptGroup={this.state.promptGroup} pos={this.state.cardPos} />;
+      cardView = <CardView promptGroup={this.state.promptGroup} pos={this.state.cardPos} discard={this.discard} />;
     }
 
     return (
