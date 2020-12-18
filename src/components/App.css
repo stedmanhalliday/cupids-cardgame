@@ -4,7 +4,7 @@
     &.modal {
 
         & .Decks {
-            @apply transition-opacity opacity-25 duration-500;
+            @apply opacity-25;
         }
     }
 

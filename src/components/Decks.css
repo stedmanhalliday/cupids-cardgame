@@ -1,7 +1,8 @@
 .Decks {
+  @apply transition-opacity duration-500;
 
   &::before, &::after {
-    content: '';
+    content: "";
     min-width: 3rem;
     @apply flex-auto h-px;
   }

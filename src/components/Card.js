@@ -35,16 +35,6 @@ class FlipCard extends React.Component {
         };
     }
 
-    flipCard() {
-        this.setState({
-            flipped: true,
-            style: {
-                top: '50%',
-                left: '50%'
-            }
-        });
-    }
-
     componentDidMount() {
         hyphenate(this.props.prompt).then(result => {
             this.setState({
@@ -54,9 +44,34 @@ class FlipCard extends React.Component {
         setTimeout(this.flipCard, 10);
     }
 
+    flipCard() {
+        this.setState({
+            flipped: true,
+            style: {
+                top: "50%",
+                left: "50%"
+            }
+        });
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.discarded != prevProps.discarded) {
+            this.setState({
+                style: {
+                    transitionDuration: ".5s",
+                    transitionTimingFunction: "ease-out",
+                    top: "50%",
+                    left: "100%",
+                    opacity: 0,
+                    transform: "scale(1.5) rotate(30deg)"
+                }
+            });
+        }
+    }
+
     render() {
         return(
-            <Card flipCard={()=>{}} promptGroup={this.props.promptGroup} flipped={this.state.flipped} style={this.state.style} >
+            <Card flipCard={()=>{}} discarded={this.props.discarded} promptGroup={this.props.promptGroup} flipped={this.state.flipped} style={this.state.style} >
                 <div className="back justify-between bg-white px-4 py-6 font-serif text-red-400">
                     <div className="divide-y divide-red-200">
                         <h2 className="prompt-group pb-4 uppercase text-center">{this.props.promptGroup}</h2>

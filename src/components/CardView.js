@@ -10,15 +10,16 @@ class CardView extends React.Component {
         this.state = {
             style: {
                 opacity: 0
-            }
+            },
+            discarded: false
         };
     }
 
     mountStyle() {
         this.setState({
             style: {
-                transitionDelay: '500ms',
-                transitionDuration: '500ms'
+                transitionDelay: ".5s",
+                transitionDuration: ".5s"
             }
         });
     }
@@ -33,12 +34,12 @@ class CardView extends React.Component {
     }
 
     discard() {
-        //animate card exit
         this.setState({
             style: {
-                transitionDuration: '500ms',
+                transitionDuration: ".5s",
                 opacity: 0
-            }
+            },
+            discarded: true
         });
         this.nextRef.current.ontransitionend = (e) => { //replace with longer card transition
             this.props.discard();
@@ -49,7 +50,7 @@ class CardView extends React.Component {
         return(
             <div className="overlay">
                 <div ref={this.nextRef} onClick={this.discard} style={this.state.style} className="next fixed flex h-16 w-16 items-center justify-center top-1/2 transform translate-x-2/4 -translate-y-2/4 bg-white text-4xl text-red-400 font-sans font-extralight rounded-full shadow-2xl transition-opacity opacity-75 duration-300 cursor-pointer">&rarr;</div>
-                <FlipCard pos={this.props.pos} promptGroup={this.props.promptGroup} prompt="If your life were a movie, what musician or band would create the soundtrack?" />
+                <FlipCard pos={this.props.pos} discarded={this.state.discarded} promptGroup={this.props.promptGroup} prompt="If your life were a movie, what musician or band would create the soundtrack?" />
             </div>
         );
     }
