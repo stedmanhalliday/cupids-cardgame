@@ -4,8 +4,6 @@ import Deck from './Deck.js'
 class Decks extends React.Component {
     constructor(props){
         super(props);
-        this.state = {
-        };
     }
 
     render() {

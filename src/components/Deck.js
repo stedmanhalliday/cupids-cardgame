@@ -6,8 +6,6 @@ class Deck extends React.Component {
         super(props);
         this.flipCard = this.flipCard.bind(this);
         this.DeckRef = React.createRef();
-        this.state = {
-        };
     }
 
     flipCard() {
