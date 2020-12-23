@@ -20,7 +20,7 @@ class Deck extends React.Component {
         for(let n=(3-1); n>=0; n--) { //revise to reverse-traverse prompt array
             const y = .5*n + "em";
             const style = {top: y};
-            cards.push(<Card style={style} flipCard={this.flipCard} promptGroup={this.props.promptGroup} />);
+            cards.push(<Card key={n} style={style} flipCard={this.flipCard} promptGroup={this.props.promptGroup} />);
         }
         return (
             <div ref={this.DeckRef} className="Deck relative flex-none">
