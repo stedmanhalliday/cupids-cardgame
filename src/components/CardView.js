@@ -50,7 +50,7 @@ class CardView extends React.Component {
         return(
             <div className="overlay">
                 <div ref={this.discardRef} onClick={this.discard} style={this.state.style} className="discard fixed h-16 w-16 top-1/2 transform translate-x-2/4 -translate-y-2/4 transition-opacity opacity-75 duration-300 cursor-pointer">
-                    <span class="flex items-center justify-center w-full h-full rounded-full bg-white shadow-2xl text-red-400 font-sans font-extralight text-4xl">&rarr;</span>
+                    <span className="flex items-center justify-center w-full h-full rounded-full bg-white shadow-2xl text-red-400 font-sans font-extralight text-4xl">&rarr;</span>
                 </div>
                 <FlipCard pos={this.props.pos} discarded={this.state.discarded} promptGroup={this.props.promptGroup} prompt="If your life were a movie, what musician or band would create the soundtrack?" />
             </div>
