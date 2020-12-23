@@ -1,14 +1,14 @@
 import React from "react";
 import gradients from "../data/gradients.json";
-import promptsLibrary from "../data/prompts.json";
+import promptData from "../data/prompts.json";
 import Decks from "./Decks.js";
 import CardView from "./CardView";
 
-let stackDecks = (promptsLibrary) => {
+let stackDecks = (promptData) => {  //initialize game decks from prompt data
     let gameDecks = [];
-    for (let n=0; n<5 && promptsLibrary.length; n++) {   //max 5 decks per game
-        const i = Math.floor(Math.random()*promptsLibrary.length);   //random deck index
-        const deck = promptsLibrary.splice(i, 1);    //pull random deck
+    for (let n=0; n<5 && promptData.length; n++) {   //max 5 decks per game
+        const i = Math.floor(Math.random()*promptData.length);   //random deck index
+        const deck = promptData.splice(i, 1);    //pull random deck
         gameDecks.push({     //name deck in game decks
             "promptGroup": deck[0].promptGroup,
             "prompts": []
@@ -23,10 +23,10 @@ let stackDecks = (promptsLibrary) => {
     return gameDecks;
 }
 
-let gameDecks = stackDecks(promptsLibrary);   //initialize game decks from card library
+let gameDecks = stackDecks(promptData);   //initialize game decks from prompt data
 
 function getGradient() {
-  // select random gradient from library and build style string
+  // select random gradient from data and build style string
   const swatch = gradients[Math.floor(Math.random()*gradients.length)];
   const deg = swatch.deg;
   let gradient = "";
@@ -55,7 +55,7 @@ class App extends React.Component {
     };
   }
 
-  mountStyle() {
+  mountStyle() {    //entrance anim style
     const gradient = getGradient();
     this.setState({
       style: {
@@ -67,7 +67,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    setTimeout(this.mountStyle, 10);
+    setTimeout(this.mountStyle, 10);    //animate entrance
   }
 
   flipCard(x, y, promptGroup) {
@@ -78,7 +78,7 @@ class App extends React.Component {
     });
   }
 
-  discard() {
+  discard() {   //dismiss flipped card
     this.setState({
       flipped: false
     });
