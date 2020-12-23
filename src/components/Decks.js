@@ -32,13 +32,15 @@ class Decks extends React.Component {
     }
 
     render() {
+        const decks = this.state.gameDecks.map(deck => {
+            return(
+                <Deck key={deck.promptGroup} flipCard={this.props.flipCard} promptGroup={deck.promptGroup} />
+            );
+        });
+
         return (
             <section className="Decks flex overflow-scroll w-full h-full items-center space-x-6 transition-all">
-                <Deck flipCard={this.props.flipCard} promptGroup="Pleasure to meet you" />
-                <Deck flipCard={this.props.flipCard} promptGroup="'Tis the season" />
-                <Deck flipCard={this.props.flipCard} promptGroup="Art, music &amp; creativity" />
-                <Deck flipCard={this.props.flipCard} promptGroup="Looking back" />
-                <Deck flipCard={this.props.flipCard} promptGroup="Moving forward" />
+                {decks}
             </section>
         );
     }
