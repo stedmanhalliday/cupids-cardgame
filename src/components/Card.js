@@ -2,10 +2,6 @@ import React from 'react';
 import { hyphenate } from "hyphen/en";
 
 class Card extends React.Component {
-    constructor(props){
-        super(props);
-    }
-
     render() {
         return (
             <div className={this.props.flipped ? "Card flipped" : "Card"} style={this.props.style} onClick={this.props.flipCard}>
@@ -55,7 +51,7 @@ class FlipCard extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if (this.props.discarded != prevProps.discarded) {
+        if (this.props.discarded !== prevProps.discarded) {
             this.setState({
                 style: {
                     transitionDuration: ".5s",
