@@ -1,0 +1,60 @@
+[
+    {
+        "promptGroup": "Nice to meet you",
+        "prompts": [
+            "What's the story behind your name?",
+            "What are you famous for among your friends and family?",
+            "What's special about the place you grew up?",
+            "What's the last thing you bought yourself?",
+            "What do you turn to when you need to recharge?",
+            "What are your favorite take-out meals?",
+            "What do you eat during the week when you want some comfort food?",
+            "What's one of your favorite smells?",
+            "Who's a living person that you admire?",
+            "What's your guilty pleasure when you have free time during the week?"
+        ]
+    },
+    {
+        "promptGroup": "'Tis the season",
+        "prompts": [
+            "What do you celebrate during the holidays?",
+            "What do you find meaningful about the holidays?",
+            "What holiday traditions do you hope to pass on to future generations?",
+            "What is your wish for the world?",
+            "You discover a wrapped box with your name on it. What do you hope is inside?"
+        ]
+    },
+    {
+        "promptGroup": "Art, music & creativity",
+        "prompts": [
+            "Share a time when you've been moved by a piece of art.",
+            "What's the most creative thing you've done lately?",
+            "Do you have a favorite artist (includes musicians)?",
+            "If your life were a movie, what musician or band would create the soundtrack?",
+            "Describe your favorite museum. What about it inspires you?",
+            "What's a song that fits your mood right now?"
+        ]
+    },
+    {
+        "promptGroup": "Looking back",
+        "prompts": [
+            "What's a lesson you've learned this past year?",
+            "What's something from the past year you're grateful for?",
+            "What are some adventurous things you've done in the past?",
+            "What is an experience you wish you could have for the first time again?",
+            "What were your favorite toys as a kid?",
+            "If you could only meet one person from the past, who would it be?"
+        ]
+    },
+    {
+        "promptGroup": "Moving forward",
+        "prompts": [
+            "Do you have any resolutions for the new year?",
+            "Are you a planner or a spontaneous person?",
+            "You wake up tomorrow to breaking news: COVID is eradicated! What's the most exciting thing on your to-do list?",
+            "If you could have a free day just for yourself, what would you do?",
+            "What is something you want to make time for this weekend?",
+            "What do you think will be different ten years from now?"
+        ]
+    }
+]

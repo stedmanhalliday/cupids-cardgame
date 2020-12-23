@@ -1,7 +1,8 @@
-import React from 'react';
-import gradients from '../data/gradients.json';
-import Decks from './Decks.js';
-import CardView from './CardView';
+import React from "react";
+import gradients from "../data/gradients.json";
+import cards from "../data/cards.json";
+import Decks from "./Decks.js";
+import CardView from "./CardView";
 
 function getGradient() {
   // select random gradient from library and build style string
@@ -12,7 +13,7 @@ function getGradient() {
     gradient += stop.color + " " + stop.pos + "%, ";
   }
   gradient = gradient.substring(0, gradient.length-2);
-  const styleVal = 'linear-gradient('+deg+'deg, '+ gradient+')';
+  const styleVal = "linear-gradient('+deg+'deg, '+ gradient+')";
   return styleVal;
 }
 

@@ -2,7 +2,7 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-@import url('https://fonts.googleapis.com/css2?family=Suranna&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Suranna&display=swap");
 
 @import "./components/App.css";
 @import "./components/Decks.css";
@@ -15,7 +15,7 @@
 }
 
 ::selection {
-    background: theme('colors.red.100');
+    background: theme("colors.red.100");
 }
 
 body {

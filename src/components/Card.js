@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { hyphenate } from "hyphen/en";
 
 class Card extends React.Component {

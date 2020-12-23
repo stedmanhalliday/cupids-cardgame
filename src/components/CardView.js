@@ -1,5 +1,5 @@
-import React from 'react';
-import { FlipCard } from './Card.js';
+import React from "react";
+import { FlipCard } from "./Card.js";
 
 class CardView extends React.Component {
     constructor(props) {
