@@ -1,5 +1,6 @@
 import React from "react";
-import Deck from "./Deck.js"
+import Deck from "./Deck.js";
+import cards from "../data/cards.json";
 
 class Decks extends React.Component {
     constructor(props){
