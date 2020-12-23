@@ -41,7 +41,7 @@ class CardView extends React.Component {
             },
             discarded: true
         });
-        this.discardRef.current.ontransitionend = (e) => { //replace with longer card transition
+        this.discardRef.current.ontransitionend = (e) => {
             this.props.discard();
         }
     }
