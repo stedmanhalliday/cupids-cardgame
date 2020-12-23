@@ -17,9 +17,11 @@ class Deck extends React.Component {
 
     render() {
         let cards = [];
-        for(let n=(3-1); n>=0; n--) { //revise to reverse-traverse prompt array
-            const y = .5*n + "em";
-            const style = {top: y};
+        for(let n=(7-1); n>=0; n--) { //revise to reverse-traverse prompt array
+            const y = .25*n + "em";
+            const a = Math.pow(.6667, n);
+            const k = "scale(" + Math.pow(.9975, n) + ")";
+            const style = { top: y, opacity: a, transform: k };
             cards.push(<Card key={n} style={style} flipCard={this.flipCard} promptGroup={this.props.promptGroup} />);
         }
         return (
