@@ -73,17 +73,17 @@ class App extends React.Component {
 
   flipCard(x, y, promptGroup) {
     const prompt = "";
-    const newDecks = this.state.gameDecks.map(deck => {
-      const newPrompts = deck.prompts.filter((prompt, n) => {
-        if(deck.promptGroup === promptGroup) {
+    const newDecks = this.state.gameDecks.map(deck => {   //iterate through each deck in game decks
+      const newPrompts = deck.prompts.filter((prompt, n) => {   //iterate through each prompt in each game deck
+        if(deck.promptGroup === promptGroup) {    //remove the top card from the chosen deck
           prompt = deck.prompts[0];
           return (
             n !== 0
           );
         }
-        return true;
+        return true;   //leave all other decks intact
       });
-      return (
+      return (    //update game decks
         {
           promptGroup: deck.promptGroup,
           prompts: newPrompts
