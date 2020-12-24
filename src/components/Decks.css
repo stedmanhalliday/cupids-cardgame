@@ -1,18 +1,17 @@
 .Decks {
-  @apply transition-opacity duration-500;
+    @apply transition-opacity duration-500;
 
-  &::before, &::after {
-    content: "";
-    min-width: 3rem;
-    @apply flex-auto h-px;
-  }
-  
-  & .Deck {
-      width: var(--card-w);
-      height: var(--card-h);
-
-      &.collapse {
-        @apply w-0 m-0;
-      }
-  }
+    &::before, &::after {
+        content: "";
+        min-width: 3rem;
+        @apply flex-auto h-px;
+    }
+    
+    & .Deck {
+        width: var(--card-w);
+        height: var(--card-h);
+        &.collapse {
+            @apply w-0 m-0;
+        }
+    }
 }
