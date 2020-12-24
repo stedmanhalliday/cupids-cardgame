@@ -6,9 +6,7 @@ class Deck extends React.Component {
         super(props);
         this.flipCard = this.flipCard.bind(this);
         this.DeckRef = React.createRef();
-        this.state = {
-            mounted: true
-        }
+        this.state = { mounted: true };
     }
 
     flipCard() {
@@ -20,9 +18,8 @@ class Deck extends React.Component {
     componentDidUpdate(prevProps) {
         if((prevProps.length !== this.props.length) && !this.props.length) {    //if deck is empty
             this.DeckRef.current.classList.add("collapse");  //collapse width
-            this.DeckRef.current.ontransitionend = (e) => {
+            this.DeckRef.current.ontransitionend = (e) =>
                 this.setState({mounted: false});    //remove node after animation
-            }
         }
     }
 

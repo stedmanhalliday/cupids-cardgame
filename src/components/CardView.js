@@ -28,9 +28,7 @@ class CardView extends React.Component {
         setTimeout(this.mountStyle, 10);
         this.discardRef.current.ontransitionend = (e) => {
             this.discardRef.current.classList.add("visible");   //class to prevent hover/transition interference
-            this.setState({
-                style: {}
-            });
+            this.setState({ style: {} });
         };
     }
 
@@ -42,9 +40,8 @@ class CardView extends React.Component {
             },
             discarded: true
         });
-        this.discardRef.current.ontransitionend = (e) => {
+        this.discardRef.current.ontransitionend = (e) =>
             this.props.discard();
-        }
     }
 
     render() {

@@ -31,11 +31,9 @@ class FlipCard extends React.Component {
     }
 
     componentDidMount() {
-        hyphenate(this.props.prompt).then(result => {   //hyphenate prompt on backface
-            this.setState({
-                prompt: result
-            });
-        });
+        hyphenate(this.props.prompt).then(result =>   //hyphenate prompt on backface
+            this.setState({ prompt: result })
+        );
         setTimeout(this.flipCard, 10);  //flip card
     }
 

@@ -98,21 +98,15 @@ class App extends React.Component {
   }
 
   discard() {   //dismiss flipped card
-    this.setState({
-      flipped: false
-    });
+    this.setState({ flipped: false });
   }
 
   render() {
-    let cardView;
-    if (this.state.flipped) {
-      cardView = <CardView promptGroup={this.state.promptGroup} prompt={this.state.prompt} pos={this.state.cardPos} discard={this.discard} />;
-    }
 
     return (
       <main className={this.state.flipped ? "App modal" : "App"} style={this.state.style}>
         <Decks flipCard={this.flipCard} gameDecks={this.state.gameDecks} />
-        {cardView}
+        {this.state.flipped && <CardView promptGroup={this.state.promptGroup} prompt={this.state.prompt} pos={this.state.cardPos} discard={this.discard} />}
       </main>
     );
   }
