@@ -72,7 +72,7 @@ class App extends React.Component {
     setTimeout(this.mountStyle, 10);    //animate entrance
   }
 
-  flipCard(x, y, promptGroup) {
+  flipCard(x, y, promptGroup, bottomCard) {
     let newPrompt = "";
     const newDecks = this.state.gameDecks.map(deck => {   //iterate through each deck in game decks
       const newPrompts = deck.prompts.filter((prompt, n) => {   //iterate through each prompt in each game deck
@@ -96,8 +96,11 @@ class App extends React.Component {
         promptGroup: promptGroup,
         prompt: newPrompt
     });
-    document.ontransitionend = (e) =>
-      this.setState({ gameDecks: newDecks });   //update decks after animation
+    if(bottomCard) {
+      bottomCard.ontransitionend = (e) =>
+        this.setState({ gameDecks: newDecks });   //update decks after bottom card lift
+    }
+    else this.setState({ gameDecks: newDecks });  //update decks w/o bottom card
   }
 
   discard() {   //dismiss flipped card
