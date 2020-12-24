@@ -1,7 +1,7 @@
 .discard {
     right: calc((50vw - .75*var(--card-w))/2.0);
 
-    &:hover {
+    &.visible:hover {
         opacity: 100%;
     }
 

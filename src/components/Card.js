@@ -20,13 +20,12 @@ class FlipCard extends React.Component {
     constructor(props){
         super(props);
         this.flipCard = this.flipCard.bind(this);
-        let pos = this.props.pos;
         this.state = {
             prompt: "",
             flipped: false,
             style: {
-                left: pos[0],
-                top: pos[1]
+                left: this.props.pos[0],
+                top: this.props.pos[1]
             }
         };
     }

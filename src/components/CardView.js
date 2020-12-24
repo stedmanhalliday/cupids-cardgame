@@ -15,7 +15,7 @@ class CardView extends React.Component {
         };
     }
 
-    mountStyle() {
+    mountStyle() {  //entrance anim for discard btn
         this.setState({
             style: {
                 transitionDelay: ".5s",
@@ -24,9 +24,10 @@ class CardView extends React.Component {
         });
     }
 
-    componentDidMount() {
+    componentDidMount() {   //animate entrance for discard btn
         setTimeout(this.mountStyle, 10);
         this.discardRef.current.ontransitionend = (e) => {
+            this.discardRef.current.classList.add("visible");   //class to prevent hover/transition interference
             this.setState({
                 style: {}
             });
