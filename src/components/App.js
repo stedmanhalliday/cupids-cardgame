@@ -72,16 +72,14 @@ class App extends React.Component {
   }
 
   flipCard(x, y, promptGroup) {
-    const prompt = "";
+    let newPrompt = "";
     const newDecks = this.state.gameDecks.map(deck => {   //iterate through each deck in game decks
       const newPrompts = deck.prompts.filter((prompt, n) => {   //iterate through each prompt in each game deck
-        if(deck.promptGroup === promptGroup) {    //remove the top card from the chosen deck
-          prompt = deck.prompts[0];
-          return (
-            n !== 0
-          );
+        if(deck.promptGroup === promptGroup && n === 0) {    //remove the top card from the chosen deck
+          newPrompt = prompt[0];
+          return false;
         }
-        return true;   //leave all other decks intact
+        return true;   //leave all other cards intact
       });
       return (    //update game decks
         {
@@ -90,11 +88,12 @@ class App extends React.Component {
         }
       );
     });
+    console.log(newPrompt);
     this.setState({
         flipped: true,
         cardPos: [x, y],
         promptGroup: promptGroup,
-        prompt: prompt,
+        prompt: newPrompt,
         gameDecks: newDecks
     });
   }
@@ -108,7 +107,7 @@ class App extends React.Component {
   render() {
     let cardView;
     if (this.state.flipped) {
-      cardView = <CardView promptGroup={this.state.promptGroup} pos={this.state.cardPos} discard={this.discard} />;
+      cardView = <CardView promptGroup={this.state.promptGroup} prompt={this.state.prompt} pos={this.state.cardPos} discard={this.discard} />;
     }
 
     return (
