@@ -51,7 +51,8 @@ class App extends React.Component {
       gameDecks: gameDecks,
       flipped: false,
       cardPos: [0, 0],
-      promptGroup: ""
+      promptGroup: "",
+      prompt: ""
     };
   }
 
@@ -71,10 +72,30 @@ class App extends React.Component {
   }
 
   flipCard(x, y, promptGroup) {
+    const prompt = "";
+    const newDecks = this.state.gameDecks.map(deck => {
+      const newPrompts = deck.prompts.filter((prompt, n) => {
+        if(deck.promptGroup === promptGroup) {
+          prompt = deck.prompts[0];
+          return (
+            n !== 0
+          );
+        }
+        return true;
+      });
+      return (
+        {
+          promptGroup: deck.promptGroup,
+          prompts: newPrompts
+        }
+      );
+    });
     this.setState({
         flipped: true,
         cardPos: [x, y],
-        promptGroup: promptGroup
+        promptGroup: promptGroup,
+        prompt: prompt,
+        gameDecks: newDecks
     });
   }
 
