@@ -10,5 +10,9 @@
   & .Deck {
       width: var(--card-w);
       height: var(--card-h);
+
+      &.collapse {
+        @apply w-0 m-0;
+      }
   }
 }

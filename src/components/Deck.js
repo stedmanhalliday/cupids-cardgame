@@ -6,12 +6,24 @@ class Deck extends React.Component {
         super(props);
         this.flipCard = this.flipCard.bind(this);
         this.DeckRef = React.createRef();
+        this.state = {
+            mounted: true
+        }
     }
 
     flipCard() {
         const x = this.DeckRef.current.getBoundingClientRect().left;
         const y = this.DeckRef.current.getBoundingClientRect().top;
         this.props.flipCard(x, y, this.props.promptGroup);
+    }
+
+    componentDidUpdate(prevProps) {
+        if((prevProps.length !== this.props.length) && !this.props.length) {    //if deck is empty
+            this.DeckRef.current.classList.add("collapse");  //collapse width
+            this.DeckRef.current.ontransitionend = (e) => {
+                this.setState({mounted: false});    //remove node after animation
+            }
+        }
     }
 
     render() {
@@ -29,8 +41,8 @@ class Deck extends React.Component {
                 <Card key={card} style={style} flipCard={this.flipCard} promptGroup={deck.promptGroup} />
             );
         });
-        return (
-            <div ref={this.DeckRef} className="Deck relative flex-none">
+        return this.state.mounted && (
+            <div ref={this.DeckRef} className="Deck relative flex-none transition-all duration-500">
                 {cards}
             </div>
         );

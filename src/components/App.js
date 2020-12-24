@@ -88,7 +88,6 @@ class App extends React.Component {
         }
       );
     });
-    console.log(newPrompt);
     this.setState({
         flipped: true,
         cardPos: [x, y],
