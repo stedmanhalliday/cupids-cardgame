@@ -1,9 +1,9 @@
 import React from "react";
 import gradients from "../data/gradients.json";
 import promptData from "../data/prompts.json";
+import { getGradient, stackDecks } from "../scripts/init.js";
 import Decks from "./Decks.js";
 import CardView from "./CardView";
-import { getGradient, stackDecks } from "../scripts/init.js";
 
 const gradient = getGradient(gradients);    //get background gradient
 const gameDecks = stackDecks(promptData);   //initialize game decks from prompt data
