@@ -14,6 +14,7 @@ class App extends React.Component {
         this.mountStyle = this.mountStyle.bind(this);
         this.flipCard = this.flipCard.bind(this);
         this.discard = this.discard.bind(this);
+        this.clearDeck = this.clearDeck.bind(this);
         this.state = {
             style: {
                 opacity: 0
@@ -79,11 +80,18 @@ class App extends React.Component {
         });
     }
 
+    clearDeck(promptGroup) {
+        const newDecks = this.state.gameDecks.filter(deck =>
+            deck.promptGroup !== promptGroup    
+        );
+        this.setState({ gameDecks: newDecks });
+    }
+
     render() {
 
         return (
             <main className={this.state.modal ? "App modal" : "App"} style={this.state.style}>
-                <Decks flipCard={this.flipCard} gameDecks={this.state.gameDecks} />
+                <Decks flipCard={this.flipCard} gameDecks={this.state.gameDecks} clearDeck={this.clearDeck} />
                 {this.state.flipped && <CardView promptGroup={this.state.promptGroup} prompt={this.state.prompt} pos={this.state.cardPos} discard={this.discard} />}
             </main>
         );

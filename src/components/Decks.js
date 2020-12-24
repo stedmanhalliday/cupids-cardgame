@@ -4,7 +4,7 @@ import Deck from "./Deck.js";
 class Decks extends React.Component {
     render() {
         const decks = this.props.gameDecks.map(deck =>    //iterate through game decks
-            <Deck key={deck.promptGroup} length={deck.prompts.length} flipCard={this.props.flipCard} gameDecks={this.props.gameDecks} promptGroup={deck.promptGroup} />
+            <Deck key={deck.promptGroup} length={deck.prompts.length} flipCard={this.props.flipCard} gameDecks={this.props.gameDecks} promptGroup={deck.promptGroup} clearDeck={this.props.clearDeck} />
         );
 
         return (

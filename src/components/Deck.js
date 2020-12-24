@@ -26,8 +26,10 @@ class Deck extends React.Component {
     componentDidUpdate(prevProps) {
         if((prevProps.length !== this.props.length) && !this.props.length) {    //if deck is empty
             this.DeckRef.current.classList.add("collapse");  //collapse width
-            this.DeckRef.current.ontransitionend = (e) =>
-                this.setState({mounted: false});    //remove node after animation
+            this.DeckRef.current.ontransitionend = (e) => {
+                // this.setState({mounted: false});    //remove node after animation
+                this.props.clearDeck(this.props.promptGroup);
+            }
         }
     }
 
