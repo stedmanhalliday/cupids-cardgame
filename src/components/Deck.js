@@ -10,6 +10,12 @@ class Deck extends React.Component {
     }
 
     flipCard() {
+        //animate lift for bottom card
+        const bottomCard = this.DeckRef.current.querySelector(".Card:first-of-type");
+        let style = bottomCard.getAttribute("style");
+        style = style.substring(0, style.length-1) + " translateY(-.25em)";
+        bottomCard.setAttribute("style", style);
+        //pass card pos to parent flipCard
         const x = this.DeckRef.current.getBoundingClientRect().left;
         const y = this.DeckRef.current.getBoundingClientRect().top;
         this.props.flipCard(x, y, this.props.promptGroup);

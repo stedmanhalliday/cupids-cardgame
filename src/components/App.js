@@ -94,9 +94,10 @@ class App extends React.Component {
         flipped: true,
         cardPos: [x, y],
         promptGroup: promptGroup,
-        prompt: newPrompt,
-        gameDecks: newDecks
+        prompt: newPrompt
     });
+    document.ontransitionend = (e) =>
+      this.setState({ gameDecks: newDecks });   //update decks after animation
   }
 
   discard() {   //dismiss flipped card
