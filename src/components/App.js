@@ -80,6 +80,12 @@ class App extends React.Component {
             modal: false,
             flipped: false
         });
+        if(!this.state.gameDecks.length && !this.state.flipped) {   //end game if no decks left
+            this.setState({
+                modal: true,
+                gameOver: true
+            });
+        }
     }
 
     clearDeck(promptGroup) {
@@ -88,13 +94,6 @@ class App extends React.Component {
             // deck.promptGroup !== promptGroup    
         );
         this.setState({ gameDecks: newDecks });
-        if(!this.state.gameDecks.length && !this.state.flipped) {   //end game if no decks left
-            console.log("Game over");
-            this.setState({
-                modal: true,
-                gameOver: true
-            });
-        }
     }
 
     resetGame() {
