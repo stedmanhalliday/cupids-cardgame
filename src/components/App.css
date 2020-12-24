@@ -9,6 +9,6 @@
     }
 
     & .overlay {
-        @apply w-full h-full fixed;
+        @apply fixed flex w-full h-full justify-center items-center;
     }
 }

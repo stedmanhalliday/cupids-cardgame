@@ -16,28 +16,16 @@ class CardView extends React.Component {
     }
 
     mountStyle() {  //entrance anim for discard btn
-        this.setState({
-            style: {
-                transitionDelay: ".5s",
-                transitionDuration: ".5s"
-            }
-        });
+        this.setState({ style: { transitionDelay: ".5s" } });
     }
 
     componentDidMount() {   //animate entrance for discard btn
         setTimeout(this.mountStyle, 10);
-        this.discardRef.current.ontransitionend = (e) => {
-            this.discardRef.current.classList.add("visible");   //class to prevent hover/transition interference
-            this.setState({ style: {} });
-        };
     }
 
     discard() {
         this.setState({
-            style: {
-                transitionDuration: ".5s",
-                opacity: 0
-            },
+            style: { opacity: 0 },
             discarded: true
         });
         this.discardRef.current.ontransitionend = (e) =>
@@ -47,9 +35,9 @@ class CardView extends React.Component {
     render() {
         return(
             <div className="overlay">
-                <div ref={this.discardRef} onClick={this.discard} style={this.state.style} className="discard fixed h-16 w-16 top-1/2 transform translate-x-2/4 -translate-y-2/4 transition-opacity opacity-75 duration-300 cursor-pointer">
-                    <span className="flex items-center justify-center w-full h-full rounded-full bg-white shadow-2xl text-red-400 font-sans font-extralight text-4xl">&rarr;</span>
-                </div>
+                <button ref={this.discardRef} onClick={this.discard} style={this.state.style} className="discard fixed h-16 w-16 rounded-full transform translate-x-1/2 transition-opacity duration-500 focus:outline-none">
+                    <span className="flex items-center justify-center w-full h-full rounded-full shadow-2xl text-white border-2 border-white font-sans font-extralight text-4xl transition-all duration-300">&rarr;</span>
+                </button>
                 <FlipCard pos={this.props.pos} discarded={this.state.discarded} promptGroup={this.props.promptGroup} prompt={this.props.prompt} />
             </div>
         );

@@ -4,9 +4,10 @@ import promptData from "../data/prompts.json";
 import { getGradient, stackDecks } from "../scripts/init.js";
 import Decks from "./Decks.js";
 import CardView from "./CardView";
+import GameOver from "./GameOver";
 
-const gradient = getGradient(gradients);    //get background gradient
-const gameDecks = stackDecks(promptData);   //initialize game decks from prompt data
+let gradient = getGradient(gradients);    //get background gradient
+let gameDecks = stackDecks(promptData);   //initialize game decks from prompt data
 
 class App extends React.Component {
     constructor(props) {
@@ -22,6 +23,7 @@ class App extends React.Component {
             gameDecks: gameDecks,
             modal: false,
             flipped: false,
+            gameOver: false,
             cardPos: [0, 0],
             promptGroup: "",
             prompt: ""
@@ -82,9 +84,27 @@ class App extends React.Component {
 
     clearDeck(promptGroup) {
         const newDecks = this.state.gameDecks.filter(deck =>
-            deck.promptGroup !== promptGroup    
+            false   //test gameOver
+            // deck.promptGroup !== promptGroup    
         );
         this.setState({ gameDecks: newDecks });
+        if(!this.state.gameDecks.length && !this.state.flipped) {   //end game if no decks left
+            console.log("Game over");
+            this.setState({
+                modal: true,
+                gameOver: true
+            });
+        }
+    }
+
+    resetGame() {
+        gameDecks = stackDecks(promptData);
+        //gradient stuff and reset state
+        this.setState({
+            gameDecks: gameDecks,
+            modal: false,
+            gameOver: false
+        });
     }
 
     render() {
@@ -93,6 +113,7 @@ class App extends React.Component {
             <main className={this.state.modal ? "App modal" : "App"} style={this.state.style}>
                 <Decks flipCard={this.flipCard} gameDecks={this.state.gameDecks} clearDeck={this.clearDeck} />
                 {this.state.flipped && <CardView promptGroup={this.state.promptGroup} prompt={this.state.prompt} pos={this.state.cardPos} discard={this.discard} />}
+                {this.state.gameOver && <GameOver resetGame={this.resetGame} />}
             </main>
         );
     }

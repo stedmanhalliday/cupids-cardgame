@@ -32,7 +32,7 @@
     @apply fixed cursor-auto;
 
     &.flipped {
-        @apply scale-x-150 scale-y-150 -translate-x-2/4 -translate-y-2/4;
+        @apply scale-x-150 scale-y-150 -translate-x-1/2 -translate-y-1/2;
 
         & .faces {
             @apply shadow-2xl;
