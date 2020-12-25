@@ -38,7 +38,6 @@ class App extends React.Component {
                 opacity: 1
             }
         });
-        console.log(gradient);
     }
 
     componentDidMount() {
@@ -68,12 +67,13 @@ class App extends React.Component {
             cardPos: [x, y],
             promptGroup: promptGroup,
             prompt: newPrompt
+        }, () => {
+            if (bottomCard) {
+                bottomCard.ontransitionend = (e) =>
+                    this.setState({ gameDecks: newDecks });   //update decks after bottom card lift
+            }
+            else this.setState({ gameDecks: newDecks });  //update decks w/o bottom card
         });
-        if (bottomCard) {
-            bottomCard.ontransitionend = (e) =>
-                this.setState({ gameDecks: newDecks });   //update decks after bottom card lift
-        }
-        else this.setState({ gameDecks: newDecks });  //update decks w/o bottom card
     }
 
     discard() {   //dismiss flipped card
@@ -115,7 +115,7 @@ class App extends React.Component {
     render() {
         return (
             <main className={this.state.modal ? "App modal" : "App"} style={this.state.style}>
-                <Decks flipCard={this.flipCard} gameDecks={this.state.gameDecks} clearDeck={this.clearDeck} />
+                {!this.state.gameOver && <Decks flipCard={this.flipCard} gameDecks={this.state.gameDecks} clearDeck={this.clearDeck} />}
                 {this.state.flipped && <CardView promptGroup={this.state.promptGroup} prompt={this.state.prompt} pos={this.state.cardPos} discard={this.discard} />}
                 {this.state.gameOver && <GameOver resetGame={this.resetGame} />}
             </main>
