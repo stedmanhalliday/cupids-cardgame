@@ -92,21 +92,21 @@ class App extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
+        //shuffle decks and end game after last card flip
         if(prevState.flipped !== this.state.flipped) {
-            if(!this.state.gameDecks.length && !this.state.flipped) {   //end game if no decks left
+            if(!this.state.gameDecks.length && !this.state.flipped) {
+                gameDecks = stackDecks(promptData);
                 this.setState({
                     modal: true,
-                    gameOver: true
+                    gameOver: true,
+                    gameDecks: gameDecks
                 });
             }
         }
     }
 
     resetGame() {
-        gameDecks = stackDecks(promptData);
-        //gradient stuff and reset state
         this.setState({
-            gameDecks: gameDecks,
             modal: false,
             gameOver: false
         });
