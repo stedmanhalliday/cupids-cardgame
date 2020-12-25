@@ -8,9 +8,7 @@ class CardView extends React.Component {
         this.discard = this.discard.bind(this);
         this.discardRef = React.createRef();
         this.state = {
-            style: {
-                opacity: 0
-            },
+            style: { opacity: 0 },
             discarded: false
         };
     }
