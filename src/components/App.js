@@ -39,11 +39,11 @@ class App extends React.Component {
         setTimeout(this.mountStyle);    //animate entrance
     }
 
-    flipCard(x, y, promptGroup, bottomCard) {
+    flipCard(x, y, promptGroup, topCard) {
         let newPrompt = "";
         const newDecks = this.state.gameDecks.map(deck => {   //iterate through each deck in game decks
-            const newPrompts = deck.prompts.filter((prompt, n) => {   //iterate through each prompt in each game deck
-                if (deck.promptGroup === promptGroup && n === 0) {    //remove the top card from the chosen deck
+            const newPrompts = deck.prompts.filter((prompt, n, hand) => {   //iterate through each prompt in each game deck
+                if (deck.promptGroup === promptGroup && n === hand.length-1) {    //remove the top card from the chosen deck
                     newPrompt = prompt;
                     return false;
                 }
@@ -63,11 +63,11 @@ class App extends React.Component {
             promptGroup: promptGroup,
             prompt: newPrompt
         }, () => {
-            if (bottomCard) {
-                bottomCard.ontransitionend = (e) =>
-                    this.setState({ gameDecks: newDecks });   //update decks after bottom card lift
+            if (topCard) {
+                topCard.ontransitionend = (e) =>
+                    this.setState({ gameDecks: newDecks });   //update decks after lift
             }
-            else this.setState({ gameDecks: newDecks });  //update decks w/o bottom card
+            else this.setState({ gameDecks: newDecks });  //update decks w/o lift
         });
     }
 

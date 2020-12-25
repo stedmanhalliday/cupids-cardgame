@@ -4,6 +4,10 @@
     width: var(--card-w);
     height: var(--card-h);
 
+    & * {
+        visibility: inherit;
+    }
+
     & .faces {
         @apply rounded-lg shadow;
         transform-style: preserve-3d;
