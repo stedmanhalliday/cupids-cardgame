@@ -17,7 +17,7 @@ class Card extends React.Component {
 }
 
 class FlipCard extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.flipCard = this.flipCard.bind(this);
         this.state = {
@@ -62,8 +62,8 @@ class FlipCard extends React.Component {
     }
 
     render() {
-        return(
-            <Card flipCard={()=>{}} discarded={this.props.discarded} promptGroup={this.props.promptGroup} flipped={this.state.flipped} style={this.state.style} >
+        return (
+            <Card flipCard={() => { }} discarded={this.props.discarded} promptGroup={this.props.promptGroup} flipped={this.state.flipped} style={this.state.style} >
                 <div className="back justify-between bg-white px-4 py-6 font-serif text-red-400">
                     <div className="divide-y divide-red-200">
                         <h2 className="prompt-group pb-4 uppercase text-center">{this.props.promptGroup}</h2>

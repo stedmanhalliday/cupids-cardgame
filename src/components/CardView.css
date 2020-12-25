@@ -1,7 +1,8 @@
 .discard {
-    right: calc((50vw - .75*var(--card-w))/2.0);
+    right: calc((50vw - 0.75 * var(--card-w)) / 2);
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
         & span {
             @apply text-red-400 bg-white;
         }

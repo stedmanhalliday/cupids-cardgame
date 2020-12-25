@@ -43,7 +43,7 @@ class App extends React.Component {
         let newPrompt = "";
         const newDecks = this.state.gameDecks.map(deck => {   //iterate through each deck in game decks
             const newPrompts = deck.prompts.filter((prompt, n, hand) => {   //iterate through each prompt in each game deck
-                if (deck.promptGroup === promptGroup && n === hand.length-1) {    //remove the top card from the chosen deck
+                if (deck.promptGroup === promptGroup && n === hand.length - 1) {    //remove the top card from the chosen deck
                     newPrompt = prompt;
                     return false;
                 }
@@ -88,8 +88,8 @@ class App extends React.Component {
 
     componentDidUpdate(prevProps, prevState) {
         //shuffle decks and end game after last card flip
-        if(prevState.flipped !== this.state.flipped) {
-            if(!this.state.gameDecks.length && !this.state.flipped) {
+        if (prevState.flipped !== this.state.flipped) {
+            if (!this.state.gameDecks.length && !this.state.flipped) {
                 gameDecks = stackDecks(promptData);
                 this.setState({
                     modal: true,

@@ -12,7 +12,8 @@
         @apply rounded-lg shadow;
         transform-style: preserve-3d;
 
-        & .front, & .back {
+        & .front,
+        & .back {
             @apply flex flex-col box-border w-full h-full rounded-lg overflow-hidden absolute;
             backface-visibility: hidden;
         }
@@ -21,8 +22,8 @@
             transform: rotateY(180deg);
 
             & .prompt-group {
-                font-size: .5rem;
-                letter-spacing: .2em;
+                font-size: 0.5rem;
+                letter-spacing: 0.2em;
             }
 
             & .prompt {

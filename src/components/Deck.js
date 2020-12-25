@@ -11,14 +11,14 @@ class Deck extends React.Component {
     flipCard() {
         //animate deck lift
         const topCard = this.DeckRef.current.querySelector(".Card:last-of-type:not(:first-of-type)");
-        if(topCard) {
+        if (topCard) {
             const cards = this.DeckRef.current.querySelectorAll(".Card");
             cards.forEach((card, n, hand) => {
                 n = hand.length - (n + 2);    //reverse card iteration for stacking order
                 let y = .25 * n + "rem";     //dY
                 let a = Math.pow(.6667, n);   //alpha
                 let k = "scale(" + Math.pow(.9975, n) + ")";      //scale
-                if(card === topCard){
+                if (card === topCard) {
                     y = 0;
                     a = 0;
                     k = "none";
@@ -34,7 +34,7 @@ class Deck extends React.Component {
     }
 
     componentDidUpdate(prevProps) {
-        if((prevProps.length !== this.props.length) && !this.props.length) {    //if deck is empty
+        if ((prevProps.length !== this.props.length) && !this.props.length) {    //if deck is empty
             this.DeckRef.current.classList.add("collapse");  //collapse width
             this.DeckRef.current.ontransitionend = (e) =>
                 this.props.clearDeck(this.props.promptGroup);   //remove node after animation

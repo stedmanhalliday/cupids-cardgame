@@ -9,7 +9,7 @@ class Decks extends React.Component {
             style: {
                 opacity: 0,
                 transform: "translateY(2rem)"
-            } 
+            }
         };
     }
 

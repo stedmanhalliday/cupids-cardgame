@@ -1,389 +1,389 @@
 [
-  {
-    "name": "Night Fade",
-    "favorite": false,
-    "index": "002",
-    "deg": 0,
-    "group": [
-      "#FC96D3",
-      "#8B56E9"
-    ],
-    "gradient": [
-      {
-        "color": "#a18cd1",
-        "pos": 0
-      },
-      {
-        "color": "#fbc2eb",
-        "pos": 100
-      }
-    ]
-  },
-  {
-    "name": "Lady Lips",
-    "favorite": false,
-    "index": "006",
-    "deg": 0,
-    "group": [
-      "#FC96D3"
-    ],
-    "gradient": [
-      {
-        "color": "#ff9a9e",
-        "pos": 0
-      },
-      {
-        "color": "#fecfef",
-        "pos": 100
-      }
-    ]
-  },
-  {
-    "name": "Rainy Ashville",
-    "favorite": false,
-    "index": "008",
-    "deg": 0,
-    "group": [
-      "#FC96D3"
-    ],
-    "gradient": [
-      {
-        "color": "#fbc2eb",
-        "pos": 0
-      },
-      {
-        "color": "#a6c1ee",
-        "pos": 100
-      }
-    ]
-  },
-  {
-    "name": "Amy Crisp",
-    "favorite": false,
-    "index": "014",
-    "deg": 120,
-    "group": [
-      "#FC96D3",
-      "#8B56E9"
-    ],
-    "gradient": [
-      {
-        "color": "#a6c0fe",
-        "pos": 0
-      },
-      {
-        "color": "#f68084",
-        "pos": 100
-      }
-    ]
-  },
-  {
-    "name": "Mean Fruit",
-    "favorite": false,
-    "index": "015",
-    "deg": 120,
-    "group": [
-      "#F9AFAD",
-      "#FC96D3"
-    ],
-    "gradient": [
-      {
-        "color": "#fccb90",
-        "pos": 0
-      },
-      {
-        "color": "#d57eeb",
-        "pos": 100
-      }
-    ]
-  },
-  {
-    "name": "Ripe Malinka",
-    "favorite": false,
-    "index": "017",
-    "deg": 120,
-    "group": [
-      "#FC96D3"
-    ],
-    "gradient": [
-      {
-        "color": "#f093fb",
-        "pos": 0
-      },
-      {
-        "color": "#f5576c",
-        "pos": 100
-      }
-    ]
-  },
-  {
-    "name": "Star Wine",
-    "favorite": false,
-    "index": "038",
-    "deg": 0,
-    "group": [
-      "#FC96D3",
-      "#8B56E9"
-    ],
-    "gradient": [
-      {
-        "color": "#b465da",
-        "pos": 0
-      },
-      {
-        "color": "#cf6cc9",
-        "pos": 33
-      },
-      {
-        "color": "#ee609c",
-        "pos": 66
-      },
-      {
-        "color": "#ee609c",
-        "pos": 100
-      }
-    ]
-  },
-  {
-    "name": "Mixed Hopes",
-    "favorite": false,
-    "index": "046",
-    "deg": 0,
-    "group": [
-      "#FC96D3"
-    ],
-    "gradient": [
-      {
-        "color": "#c471f5",
-        "pos": 0
-      },
-      {
-        "color": "#fa71cd",
-        "pos": 100
-      }
-    ]
-  },
-  {
-    "name": "Amour Amour",
-    "favorite": false,
-    "index": "097",
-    "deg": 0,
-    "group": [
-      "#E5E9EC",
-      "#FC96D3"
-    ],
-    "gradient": [
-      {
-        "color": "#f77062",
-        "pos": 0
-      },
-      {
-        "color": "#fe5196",
-        "pos": 100
-      }
-    ]
-  },
-  {
-    "name": "Colorful Peach",
-    "favorite": false,
-    "index": "126",
-    "deg": 0,
-    "group": [
-      "#F9AFAD"
-    ],
-    "gradient": [
-      {
-        "color": "#ed6ea0",
-        "pos": 0
-      },
-      {
-        "color": "#ec8c69",
-        "pos": 100
-      }
-    ]
-  },
-  {
-    "name": "African Field",
-    "favorite": false,
-    "index": "131",
-    "deg": -45,
-    "group": [
-      "#F9AFAD"
-    ],
-    "gradient": [
-      {
-        "color": "#FFC796",
-        "pos": 0
-      },
-      {
-        "color": "#FF6B95",
-        "pos": 100
-      }
-    ]
-  },
-  {
-    "name": "Orange Juice",
-    "favorite": false,
-    "index": "133",
-    "deg": -20,
-    "group": [
-      "#F9AFAD"
-    ],
-    "gradient": [
-      {
-        "color": "#fc6076",
-        "pos": 0
-      },
-      {
-        "color": "#ff9a44",
-        "pos": 100
-      }
-    ]
-  },
-  {
-    "name": "Forest Inei",
-    "favorite": false,
-    "index": "143",
-    "deg": 0,
-    "group": [
-      "#FC96D3"
-    ],
-    "gradient": [
-      {
-        "color": "#df89b5",
-        "pos": 0
-      },
-      {
-        "color": "#bfd9fe",
-        "pos": 100
-      }
-    ]
-  },
-  {
-    "name": "Royal Garden",
-    "favorite": false,
-    "index": "144",
-    "deg": 0,
-    "group": [
-      "#7BCC9B"
-    ],
-    "gradient": [
-      {
-        "color": "#ed6ea0",
-        "pos": 0
-      },
-      {
-        "color": "#ec8c69",
-        "pos": 100
-      }
-    ]
-  },
-  {
-    "name": "Norse Beauty",
-    "favorite": false,
-    "index": "149",
-    "deg": 0,
-    "group": [
-      "#FC96D3",
-      "#8B56E9"
-    ],
-    "gradient": [
-      {
-        "color": "#ec77ab",
-        "pos": 0
-      },
-      {
-        "color": "#7873f5",
-        "pos": 100
-      }
-    ]
-  },
-  {
-    "name": "Sleepless Night",
-    "favorite": false,
-    "index": "157",
-    "deg": -225,
-    "group": [
-      "#8B56E9"
-    ],
-    "gradient": [
-      {
-        "color": "#5271C4",
-        "pos": 0
-      },
-      {
-        "color": "#B19FFF",
-        "pos": 48
-      },
-      {
-        "color": "#ECA1FE",
-        "pos": 100
-      }
-    ]
-  },
-  {
-    "name": "Angel Care",
-    "favorite": false,
-    "index": "158",
-    "deg": -225,
-    "group": [
-      "#F9AFAD"
-    ],
-    "gradient": [
-      {
-        "color": "#FFE29F",
-        "pos": 0
-      },
-      {
-        "color": "#FFA99F",
-        "pos": 48
-      },
-      {
-        "color": "#FF719A",
-        "pos": 100
-      }
-    ]
-  },
-  {
-    "name": "Soft Lipstick",
-    "favorite": false,
-    "index": "160",
-    "deg": -225,
-    "group": [
-      "#FC96D3"
-    ],
-    "gradient": [
-      {
-        "color": "#B6CEE8",
-        "pos": 0
-      },
-      {
-        "color": "#F578DC",
-        "pos": 100
-      }
-    ]
-  },
-  {
-    "name": "Sweet Dessert",
-    "favorite": false,
-    "index": "174",
-    "deg": -225,
-    "group": [
-      "#FC96D3"
-    ],
-    "gradient": [
-      {
-        "color": "#7742B2",
-        "pos": 0
-      },
-      {
-        "color": "#F180FF",
-        "pos": 52
-      },
-      {
-        "color": "#FD8BD9",
-        "pos": 100
-      }
-    ]
-  }
+    {
+        "name": "Night Fade",
+        "favorite": false,
+        "index": "002",
+        "deg": 0,
+        "group": [
+            "#FC96D3",
+            "#8B56E9"
+        ],
+        "gradient": [
+            {
+                "color": "#a18cd1",
+                "pos": 0
+            },
+            {
+                "color": "#fbc2eb",
+                "pos": 100
+            }
+        ]
+    },
+    {
+        "name": "Lady Lips",
+        "favorite": false,
+        "index": "006",
+        "deg": 0,
+        "group": [
+            "#FC96D3"
+        ],
+        "gradient": [
+            {
+                "color": "#ff9a9e",
+                "pos": 0
+            },
+            {
+                "color": "#fecfef",
+                "pos": 100
+            }
+        ]
+    },
+    {
+        "name": "Rainy Ashville",
+        "favorite": false,
+        "index": "008",
+        "deg": 0,
+        "group": [
+            "#FC96D3"
+        ],
+        "gradient": [
+            {
+                "color": "#fbc2eb",
+                "pos": 0
+            },
+            {
+                "color": "#a6c1ee",
+                "pos": 100
+            }
+        ]
+    },
+    {
+        "name": "Amy Crisp",
+        "favorite": false,
+        "index": "014",
+        "deg": 120,
+        "group": [
+            "#FC96D3",
+            "#8B56E9"
+        ],
+        "gradient": [
+            {
+                "color": "#a6c0fe",
+                "pos": 0
+            },
+            {
+                "color": "#f68084",
+                "pos": 100
+            }
+        ]
+    },
+    {
+        "name": "Mean Fruit",
+        "favorite": false,
+        "index": "015",
+        "deg": 120,
+        "group": [
+            "#F9AFAD",
+            "#FC96D3"
+        ],
+        "gradient": [
+            {
+                "color": "#fccb90",
+                "pos": 0
+            },
+            {
+                "color": "#d57eeb",
+                "pos": 100
+            }
+        ]
+    },
+    {
+        "name": "Ripe Malinka",
+        "favorite": false,
+        "index": "017",
+        "deg": 120,
+        "group": [
+            "#FC96D3"
+        ],
+        "gradient": [
+            {
+                "color": "#f093fb",
+                "pos": 0
+            },
+            {
+                "color": "#f5576c",
+                "pos": 100
+            }
+        ]
+    },
+    {
+        "name": "Star Wine",
+        "favorite": false,
+        "index": "038",
+        "deg": 0,
+        "group": [
+            "#FC96D3",
+            "#8B56E9"
+        ],
+        "gradient": [
+            {
+                "color": "#b465da",
+                "pos": 0
+            },
+            {
+                "color": "#cf6cc9",
+                "pos": 33
+            },
+            {
+                "color": "#ee609c",
+                "pos": 66
+            },
+            {
+                "color": "#ee609c",
+                "pos": 100
+            }
+        ]
+    },
+    {
+        "name": "Mixed Hopes",
+        "favorite": false,
+        "index": "046",
+        "deg": 0,
+        "group": [
+            "#FC96D3"
+        ],
+        "gradient": [
+            {
+                "color": "#c471f5",
+                "pos": 0
+            },
+            {
+                "color": "#fa71cd",
+                "pos": 100
+            }
+        ]
+    },
+    {
+        "name": "Amour Amour",
+        "favorite": false,
+        "index": "097",
+        "deg": 0,
+        "group": [
+            "#E5E9EC",
+            "#FC96D3"
+        ],
+        "gradient": [
+            {
+                "color": "#f77062",
+                "pos": 0
+            },
+            {
+                "color": "#fe5196",
+                "pos": 100
+            }
+        ]
+    },
+    {
+        "name": "Colorful Peach",
+        "favorite": false,
+        "index": "126",
+        "deg": 0,
+        "group": [
+            "#F9AFAD"
+        ],
+        "gradient": [
+            {
+                "color": "#ed6ea0",
+                "pos": 0
+            },
+            {
+                "color": "#ec8c69",
+                "pos": 100
+            }
+        ]
+    },
+    {
+        "name": "African Field",
+        "favorite": false,
+        "index": "131",
+        "deg": -45,
+        "group": [
+            "#F9AFAD"
+        ],
+        "gradient": [
+            {
+                "color": "#FFC796",
+                "pos": 0
+            },
+            {
+                "color": "#FF6B95",
+                "pos": 100
+            }
+        ]
+    },
+    {
+        "name": "Orange Juice",
+        "favorite": false,
+        "index": "133",
+        "deg": -20,
+        "group": [
+            "#F9AFAD"
+        ],
+        "gradient": [
+            {
+                "color": "#fc6076",
+                "pos": 0
+            },
+            {
+                "color": "#ff9a44",
+                "pos": 100
+            }
+        ]
+    },
+    {
+        "name": "Forest Inei",
+        "favorite": false,
+        "index": "143",
+        "deg": 0,
+        "group": [
+            "#FC96D3"
+        ],
+        "gradient": [
+            {
+                "color": "#df89b5",
+                "pos": 0
+            },
+            {
+                "color": "#bfd9fe",
+                "pos": 100
+            }
+        ]
+    },
+    {
+        "name": "Royal Garden",
+        "favorite": false,
+        "index": "144",
+        "deg": 0,
+        "group": [
+            "#7BCC9B"
+        ],
+        "gradient": [
+            {
+                "color": "#ed6ea0",
+                "pos": 0
+            },
+            {
+                "color": "#ec8c69",
+                "pos": 100
+            }
+        ]
+    },
+    {
+        "name": "Norse Beauty",
+        "favorite": false,
+        "index": "149",
+        "deg": 0,
+        "group": [
+            "#FC96D3",
+            "#8B56E9"
+        ],
+        "gradient": [
+            {
+                "color": "#ec77ab",
+                "pos": 0
+            },
+            {
+                "color": "#7873f5",
+                "pos": 100
+            }
+        ]
+    },
+    {
+        "name": "Sleepless Night",
+        "favorite": false,
+        "index": "157",
+        "deg": -225,
+        "group": [
+            "#8B56E9"
+        ],
+        "gradient": [
+            {
+                "color": "#5271C4",
+                "pos": 0
+            },
+            {
+                "color": "#B19FFF",
+                "pos": 48
+            },
+            {
+                "color": "#ECA1FE",
+                "pos": 100
+            }
+        ]
+    },
+    {
+        "name": "Angel Care",
+        "favorite": false,
+        "index": "158",
+        "deg": -225,
+        "group": [
+            "#F9AFAD"
+        ],
+        "gradient": [
+            {
+                "color": "#FFE29F",
+                "pos": 0
+            },
+            {
+                "color": "#FFA99F",
+                "pos": 48
+            },
+            {
+                "color": "#FF719A",
+                "pos": 100
+            }
+        ]
+    },
+    {
+        "name": "Soft Lipstick",
+        "favorite": false,
+        "index": "160",
+        "deg": -225,
+        "group": [
+            "#FC96D3"
+        ],
+        "gradient": [
+            {
+                "color": "#B6CEE8",
+                "pos": 0
+            },
+            {
+                "color": "#F578DC",
+                "pos": 100
+            }
+        ]
+    },
+    {
+        "name": "Sweet Dessert",
+        "favorite": false,
+        "index": "174",
+        "deg": -225,
+        "group": [
+            "#FC96D3"
+        ],
+        "gradient": [
+            {
+                "color": "#7742B2",
+                "pos": 0
+            },
+            {
+                "color": "#F180FF",
+                "pos": 52
+            },
+            {
+                "color": "#FD8BD9",
+                "pos": 100
+            }
+        ]
+    }
 ]

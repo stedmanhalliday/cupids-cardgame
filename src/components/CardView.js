@@ -32,7 +32,7 @@ class CardView extends React.Component {
     }
 
     render() {
-        return(
+        return (
             <div className="overlay">
                 <button ref={this.discardRef} onClick={this.discard} style={this.state.style} className="discard fixed h-16 w-16 rounded-full transform translate-x-1/2 transition-opacity duration-500 focus:outline-none">
                     <span className="flex items-center justify-center w-full h-full rounded-full shadow-2xl text-white border-2 border-white font-sans font-extralight text-4xl transition-all duration-300">&rarr;</span>

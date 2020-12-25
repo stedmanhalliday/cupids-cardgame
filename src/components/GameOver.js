@@ -13,7 +13,7 @@ class GameOver extends React.Component {
     }
 
     render() {
-        return(
+        return (
             <Modal mounted={this.state.mounted} dismiss={this.props.resetGame}>
                 <h2 className="font-serif text-5xl text-red-400">Well done!</h2>
                 <p className="mt-5 mb-8 font-serif text-xl tracking-wide text-red-400">You made it through all the cards for this round. Hopefully you and your partner learned some interesting things about each other. Feel free to reshuffle the decks and see if you get new cards next time!</p>
