@@ -14,11 +14,11 @@ class Decks extends React.Component {
     }
 
     mountStyle() {
-        this.setState({ style: {} });
+        this.setState({ style: {} });   //entrance animation
     }
 
     componentDidMount() {
-        setTimeout(this.mountStyle);
+        setTimeout(this.mountStyle);    //animate entrance
     }
 
     render() {
