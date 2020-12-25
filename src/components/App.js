@@ -16,6 +16,7 @@ class App extends React.Component {
         this.flipCard = this.flipCard.bind(this);
         this.discard = this.discard.bind(this);
         this.clearDeck = this.clearDeck.bind(this);
+        this.resetGame = this.resetGame.bind(this);
         this.state = {
             style: {
                 opacity: 0
@@ -49,7 +50,7 @@ class App extends React.Component {
         const newDecks = this.state.gameDecks.map(deck => {   //iterate through each deck in game decks
             const newPrompts = deck.prompts.filter((prompt, n) => {   //iterate through each prompt in each game deck
                 if (deck.promptGroup === promptGroup && n === 0) {    //remove the top card from the chosen deck
-                    newPrompt = prompt[0];
+                    newPrompt = prompt;
                     return false;
                 }
                 return true;   //leave all other cards intact
@@ -80,12 +81,6 @@ class App extends React.Component {
             modal: false,
             flipped: false
         });
-        if(!this.state.gameDecks.length && !this.state.flipped) {   //end game if no decks left
-            this.setState({
-                modal: true,
-                gameOver: true
-            });
-        }
     }
 
     clearDeck(promptGroup) {
@@ -94,6 +89,17 @@ class App extends React.Component {
             // deck.promptGroup !== promptGroup    
         );
         this.setState({ gameDecks: newDecks });
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        if(prevState.flipped !== this.state.flipped) {
+            if(!this.state.gameDecks.length && !this.state.flipped) {   //end game if no decks left
+                this.setState({
+                    modal: true,
+                    gameOver: true
+                });
+            }
+        }
     }
 
     resetGame() {
@@ -107,7 +113,6 @@ class App extends React.Component {
     }
 
     render() {
-
         return (
             <main className={this.state.modal ? "App modal" : "App"} style={this.state.style}>
                 <Decks flipCard={this.flipCard} gameDecks={this.state.gameDecks} clearDeck={this.clearDeck} />
