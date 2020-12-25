@@ -18,7 +18,7 @@ class CardView extends React.Component {
     }
 
     componentDidMount() {   //animate entrance for discard btn
-        setTimeout(this.mountStyle, 10);
+        setTimeout(this.mountStyle);
     }
 
     discard() {

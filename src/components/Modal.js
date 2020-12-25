@@ -18,7 +18,7 @@ class Modal extends React.Component {
     }
 
     componentDidMount() {   //animate entrance
-        setTimeout(this.mountStyle, 10);
+        setTimeout(this.mountStyle);
     }
 
     componentDidUpdate(prevProps) {

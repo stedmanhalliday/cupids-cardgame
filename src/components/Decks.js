@@ -18,7 +18,7 @@ class Decks extends React.Component {
     }
 
     componentDidMount() {
-        setTimeout(this.mountStyle, 10);
+        setTimeout(this.mountStyle);
     }
 
     render() {

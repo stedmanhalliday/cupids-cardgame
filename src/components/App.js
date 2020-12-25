@@ -36,7 +36,7 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        setTimeout(this.mountStyle, 10);    //animate entrance
+        setTimeout(this.mountStyle);    //animate entrance
     }
 
     flipCard(x, y, promptGroup, bottomCard) {
