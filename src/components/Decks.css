@@ -1,6 +1,4 @@
 .Decks {
-    @apply transition-opacity duration-500;
-
     &::before, &::after {
         content: "";
         min-width: 3rem;

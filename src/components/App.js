@@ -32,12 +32,7 @@ class App extends React.Component {
     }
 
     mountStyle() {    //entrance anim style
-        this.setState({
-            style: {
-                backgroundImage: gradient,
-                opacity: 1
-            }
-        });
+        this.setState({ style: { backgroundImage: gradient } });
     }
 
     componentDidMount() {
