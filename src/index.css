@@ -8,16 +8,3 @@
 @import "./components/Decks.css";
 @import "./components/Card.css";
 @import "./components/CardView.css";
-
-:root {
-    --card-w: 13.5rem;
-    --card-h: 18rem;
-}
-
-::selection {
-    background: theme("colors.red.100");
-}
-
-body {
-    overscroll-behavior: none;
-}

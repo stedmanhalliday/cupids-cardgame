@@ -1,3 +1,16 @@
+:root {
+    --card-w: 13.5rem;
+    --card-h: 18rem;
+}
+
+::selection {
+    background: theme("colors.red.100");
+}
+
+body {
+    overscroll-behavior: none;
+}
+
 .App {
   @apply flex overflow-scroll h-screen transition-all duration-1000 items-center;
 
