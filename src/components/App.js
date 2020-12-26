@@ -126,7 +126,7 @@ class App extends React.Component {
         return (
             <main ref={this.AppRef} className={this.state.modal ? "App modal" : "App"} style={this.state.style}>
                 {this.state.pregame && <Intro startGame={this.startGame} />}
-                {!(this.state.gameOver || this.state.pregame) && <Decks flipCard={this.flipCard} gameDecks={this.state.gameDecks} clearDeck={this.clearDeck} />}
+                {!(this.state.gameOver || this.state.pregame) && <Decks flipCard={this.flipCard} gameDecks={this.state.gameDecks} modal={this.state.modal} clearDeck={this.clearDeck} />}
                 {this.state.flipped && <CardView promptGroup={this.state.promptGroup} prompt={this.state.prompt} pos={this.state.cardPos} discard={this.discard} />}
                 {this.state.gameOver && <GameOver resetGame={this.resetGame} />}
             </main>

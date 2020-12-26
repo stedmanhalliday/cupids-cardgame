@@ -13,8 +13,15 @@ class CardView extends React.Component {
         };
     }
 
-    mountStyle() {  //entrance anim for discard btn
-        this.setState({ style: { transitionDelay: ".5s" } });
+    mountStyle() {  //entrance anim and focus for discard btn
+        this.setState({ style: { transitionDelay: ".5s" } }, () => {
+            this.discardRef.current.ontransitionend = (e) => {
+                if (e.propertyName === "opacity") {
+                    this.discardRef.current.setAttribute("tabIndex", 0);
+                    this.discardRef.current.focus();
+                }
+            }
+        });
     }
 
     componentDidMount() {   //animate entrance for discard btn
@@ -36,7 +43,7 @@ class CardView extends React.Component {
     render() {
         return (
             <div className="overlay">
-                <button ref={this.discardRef} onClick={this.discard} style={this.state.style} className="discard fixed h-16 w-16 rounded-full transform translate-x-1/2 transition-opacity duration-500 focus:outline-none">
+                <button aria-label={"Next"} tabIndex={-1} ref={this.discardRef} onClick={this.discard} style={this.state.style} className="discard fixed h-16 w-16 rounded-full transform translate-x-1/2 transition-opacity duration-500 focus:outline-none">
                     <span className="flex items-center justify-center w-full h-full rounded-full shadow-2xl text-white border-2 border-white font-sans font-extralight text-4xl transition-all duration-300">&rarr;</span>
                 </button>
                 <FlipCard pos={this.props.pos} discarded={this.state.discarded} promptGroup={this.props.promptGroup} prompt={this.props.prompt} />

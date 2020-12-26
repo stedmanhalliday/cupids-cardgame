@@ -8,7 +8,14 @@ class Deck extends React.Component {
         this.DeckRef = React.createRef();
     }
 
-    flipCard() {
+    flipCard(e) {
+        // check if click, enter, or space
+        if (!(e.type === "click" || e.key === "Enter" || e.key === " "))
+            return;
+        else {
+            e.preventDefault();
+            this.DeckRef.current.blur();    //remove focus from deck
+        }
         //animate deck lift
         const topCard = this.DeckRef.current.querySelector(".Card:last-of-type:not(:first-of-type)");
         if (topCard) {
@@ -59,7 +66,7 @@ class Deck extends React.Component {
             );
         });
         return (
-            <div ref={this.DeckRef} className="Deck relative flex-none transition-all duration-500">
+            <div ref={this.DeckRef} aria-label={"Card deck: " + this.props.promptGroup} tabIndex={this.props.modal ? -1 : 0} onClick={this.flipCard} onKeyDown={this.flipCard} className="Deck relative flex-none focus:outline-none transition-all duration-500">
                 {cards}
             </div>
         );
