@@ -15,7 +15,7 @@ class Intro extends React.Component {
     render() {
         return (
             <Modal mounted={this.state.mounted} dismiss={this.props.startGame}>
-                <h2 className="font-serif text-5xl text-red-400">Welcome to vDate!</h2>
+                <h1 className="font-serif text-5xl text-red-400">Welcome to vDate!</h1>
                 <div className="mt-6 mb-4 font-serif text-xl tracking-wide text-red-400">
                     <p>vDate is a card game you can play on virtual dates to break the ice. Pick a card from any deck to reveal a prompt that can help you and your partner get to know each other. Hit the next button to skip a prompt or to pick another card when you're finished.</p>
                     <p className="mt-6 text-2xl">Good luck and have fun!</p>
