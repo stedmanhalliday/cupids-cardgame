@@ -6,22 +6,18 @@ import Decks from "./Decks.js";
 import CardView from "./CardView";
 import GameOver from "./GameOver";
 
-let gradient = getGradient(gradients);    //get background gradient
-let gameDecks = stackDecks(promptData);   //initialize game decks from prompt data
-
 class App extends React.Component {
     constructor(props) {
         super(props);
+        this.AppRef = React.createRef();
         this.mountStyle = this.mountStyle.bind(this);
         this.flipCard = this.flipCard.bind(this);
         this.discard = this.discard.bind(this);
         this.clearDeck = this.clearDeck.bind(this);
         this.resetGame = this.resetGame.bind(this);
         this.state = {
-            style: {
-                opacity: 0
-            },
-            gameDecks: gameDecks,
+            style: { opacity: 0 },
+            gameDecks: stackDecks(promptData),
             modal: false,
             flipped: false,
             gameOver: false,
@@ -32,7 +28,7 @@ class App extends React.Component {
     }
 
     mountStyle() {    //entrance anim style
-        this.setState({ style: { backgroundImage: gradient } });
+        this.setState({ style: { backgroundImage: getGradient(gradients) } });
     }
 
     componentDidMount() {
@@ -64,10 +60,13 @@ class App extends React.Component {
             prompt: newPrompt
         }, () => {
             if (topCard) {
-                topCard.ontransitionend = (e) =>
-                    this.setState({ gameDecks: newDecks });   //update decks after lift
+                topCard.ontransitionend = (e) => {
+                    if (e.propertyName === "opacity")
+                        this.setState({ gameDecks: newDecks });   //update decks after lift
+                }
             }
             else this.setState({ gameDecks: newDecks });  //update decks w/o lift
+            this.clearDeck(); //test gameOver
         });
     }
 
@@ -90,26 +89,34 @@ class App extends React.Component {
         //shuffle decks and end game after last card flip
         if (prevState.flipped !== this.state.flipped) {
             if (!this.state.gameDecks.length && !this.state.flipped) {
-                gameDecks = stackDecks(promptData);
                 this.setState({
                     modal: true,
                     gameOver: true,
-                    gameDecks: gameDecks
+                    gameDecks: stackDecks(promptData)
                 });
             }
         }
     }
 
     resetGame() {
-        this.setState({
+        const bg = this.AppRef.current.style.backgroundImage;   //get current gradient
+        this.setState({     //fade out
             modal: false,
-            gameOver: false
+            style: { 
+                backgroundImage: bg,
+                opacity: 0
+             }
+        }, () => {
+            setTimeout(() => {
+                this.mountStyle();      //render new gradient
+                this.setState({ gameOver: false });     //render shuffled decks
+            }, 1000);
         });
     }
 
     render() {
         return (
-            <main className={this.state.modal ? "App modal" : "App"} style={this.state.style}>
+            <main ref={this.AppRef} className={this.state.modal ? "App modal" : "App"} style={this.state.style}>
                 {!this.state.gameOver && <Decks flipCard={this.flipCard} gameDecks={this.state.gameDecks} clearDeck={this.clearDeck} />}
                 {this.state.flipped && <CardView promptGroup={this.state.promptGroup} prompt={this.state.prompt} pos={this.state.cardPos} discard={this.discard} />}
                 {this.state.gameOver && <GameOver resetGame={this.resetGame} />}

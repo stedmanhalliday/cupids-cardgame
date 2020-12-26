@@ -25,8 +25,10 @@ class Modal extends React.Component {
         if ((prevProps.mounted !== this.props.mounted) && !this.props.mounted) {
             this.setState({ style: unmountStyle },  //animate exit
                 () => {
-                    this.ModalRef.current.ontransitionend = (e) =>
-                        setTimeout(this.props.dismiss, 1000);   //call parent dismiss function
+                    this.ModalRef.current.ontransitionend = (e) => {
+                        if(e.propertyName === "opacity")
+                            setTimeout(this.props.dismiss, 1000);   //call parent dismiss function
+                    }
                 }
             );
         }

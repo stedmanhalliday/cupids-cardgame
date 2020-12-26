@@ -26,8 +26,10 @@ class CardView extends React.Component {
             style: { opacity: 0 },
             discarded: true
         }, () => {
-            this.discardRef.current.ontransitionend = (e) =>
-                this.props.discard();
+            this.discardRef.current.ontransitionend = (e) => {
+                if (e.propertyName === "opacity")
+                    this.props.discard();
+            }
         });
     }
 
