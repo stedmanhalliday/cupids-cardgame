@@ -6,6 +6,9 @@
         & span {
             @apply text-red-400 bg-white;
         }
+        &::before {
+            @apply bg-pink-50;
+        }
     }
 
     &::before {

@@ -64,7 +64,7 @@ class Deck extends React.Component {
             );
         });
         return (
-            <div ref={this.DeckRef} aria-label={"Card deck: " + this.props.promptGroup} tabIndex={this.props.modal ? -1 : 0} onClick={this.flipCard} onKeyDown={this.flipCard} className="Deck relative flex-none rounded-lg outline-none focus:ring-2 ring-red-400 transition-all duration-500">
+            <div ref={this.DeckRef} aria-label={"Card deck: " + this.props.promptGroup} tabIndex={this.props.modal ? -1 : 0} onClick={this.flipCard} onKeyDown={this.flipCard} className="Deck relative flex-none rounded-lg outline-none focus:ring-4 ring-red-500 transition-all duration-500">
                 {cards}
             </div>
         );

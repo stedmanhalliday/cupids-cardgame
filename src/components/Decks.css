@@ -15,7 +15,7 @@
         }
 
         &:focus::before {
-            @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 origin-bottom-right rounded-lg bg-pink-100 animate-ping;
+            @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 origin-bottom-right rounded-lg bg-pink-50 animate-ping;
             content: "";
             width: 62.5%;
             height: 62.5%;
