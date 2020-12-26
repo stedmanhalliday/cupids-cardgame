@@ -76,7 +76,6 @@ class App extends React.Component {
                 }
             }
             else this.setState({ gameDecks: newDecks });  //update decks w/o lift
-            this.clearDeck(); //test gameOver
         });
     }
 
@@ -89,8 +88,7 @@ class App extends React.Component {
 
     clearDeck(promptGroup) {
         const newDecks = this.state.gameDecks.filter(deck =>
-            false   //test gameOver
-            // deck.promptGroup !== promptGroup    
+            deck.promptGroup !== promptGroup    
         );
         this.setState({ gameDecks: newDecks });
     }
