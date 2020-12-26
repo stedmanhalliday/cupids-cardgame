@@ -88,7 +88,7 @@ class App extends React.Component {
 
     clearDeck(promptGroup) {
         const newDecks = this.state.gameDecks.filter(deck =>
-            deck.promptGroup !== promptGroup    
+            deck.promptGroup !== promptGroup
         );
         this.setState({ gameDecks: newDecks });
     }
@@ -110,10 +110,10 @@ class App extends React.Component {
         const bg = this.AppRef.current.style.backgroundImage;   //get current gradient
         this.setState({     //fade out
             modal: false,
-            style: { 
+            style: {
                 backgroundImage: bg,
                 opacity: 0
-             }
+            }
         }, () => {
             setTimeout(() => {
                 this.mountStyle();      //render new gradient
