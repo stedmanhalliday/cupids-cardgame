@@ -19,6 +19,7 @@
 .env.production.local
 .eslintcache
 .stylelintrc.json
+.htaccess
 
 npm-debug.log*
 yarn-debug.log*
