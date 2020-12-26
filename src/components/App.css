@@ -12,15 +12,15 @@ body {
 }
 
 .App {
-  @apply flex overflow-scroll h-screen transition-all duration-1000 items-center;
+    @apply flex overflow-scroll h-screen transition-all duration-1000 items-center;
 
-  &.modal {
-    & .Decks {
-      @apply opacity-25;
+    &.modal {
+        & .Decks {
+            @apply opacity-25;
+        }
     }
-  }
 
-  & .overlay {
-    @apply fixed flex w-full h-full justify-center items-center;
-  }
+    & .overlay {
+        @apply fixed flex w-full h-full justify-center items-center;
+    }
 }
