@@ -2,6 +2,7 @@ import React from "react";
 import gradients from "../data/gradients.json";
 import promptData from "../data/prompts.json";
 import { getGradient, stackDecks } from "../scripts/init.js";
+import Intro from "./Intro";
 import Decks from "./Decks.js";
 import CardView from "./CardView";
 import GameOver from "./GameOver";
@@ -11,14 +12,16 @@ class App extends React.Component {
         super(props);
         this.AppRef = React.createRef();
         this.mountStyle = this.mountStyle.bind(this);
+        this.startGame = this.startGame.bind(this);
         this.flipCard = this.flipCard.bind(this);
         this.discard = this.discard.bind(this);
         this.clearDeck = this.clearDeck.bind(this);
         this.resetGame = this.resetGame.bind(this);
         this.state = {
             style: { opacity: 0 },
+            pregame: true,
             gameDecks: stackDecks(promptData),
-            modal: false,
+            modal: true,
             flipped: false,
             gameOver: false,
             cardPos: [0, 0],
@@ -33,6 +36,13 @@ class App extends React.Component {
 
     componentDidMount() {
         setTimeout(this.mountStyle);    //animate entrance
+    }
+
+    startGame() {
+        this.setState({
+            pregame: false,
+            modal: false
+        });
     }
 
     flipCard(x, y, promptGroup, topCard) {
@@ -117,7 +127,8 @@ class App extends React.Component {
     render() {
         return (
             <main ref={this.AppRef} className={this.state.modal ? "App modal" : "App"} style={this.state.style}>
-                {!this.state.gameOver && <Decks flipCard={this.flipCard} gameDecks={this.state.gameDecks} clearDeck={this.clearDeck} />}
+                {this.state.pregame && <Intro startGame={this.startGame} />}
+                {!(this.state.gameOver || this.state.pregame) && <Decks flipCard={this.flipCard} gameDecks={this.state.gameDecks} clearDeck={this.clearDeck} />}
                 {this.state.flipped && <CardView promptGroup={this.state.promptGroup} prompt={this.state.prompt} pos={this.state.cardPos} discard={this.discard} />}
                 {this.state.gameOver && <GameOver resetGame={this.resetGame} />}
             </main>
