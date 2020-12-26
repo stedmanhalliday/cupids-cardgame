@@ -12,10 +12,8 @@ class Deck extends React.Component {
         // check if click, enter, or space
         if (!(e.type === "click" || e.key === "Enter" || e.key === " "))
             return;
-        else {
-            e.preventDefault();
-            this.DeckRef.current.blur();    //remove focus from deck
-        }
+        else this.DeckRef.current.blur();    //remove focus from deck
+
         //animate deck lift
         const topCard = this.DeckRef.current.querySelector(".Card:last-of-type:not(:first-of-type)");
         if (topCard) {
