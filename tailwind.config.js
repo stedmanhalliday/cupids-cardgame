@@ -4,7 +4,7 @@ module.exports = {
     theme: {
         extend: {},
         fontFamily: {
-            "serif": ["Suranna", "Georgia", "ui-serif", "serif"],
+            "serif": ["Suranna", "Georgia", "ui-serif", "serif"]
         },
         boxShadow: {
             sm: "0 1px 2px 0 rgba(131, 24, 67, 0.05)",
