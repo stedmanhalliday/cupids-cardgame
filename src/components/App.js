@@ -16,6 +16,7 @@ class App extends React.Component {
         this.flipCard = this.flipCard.bind(this);
         this.discard = this.discard.bind(this);
         this.clearDeck = this.clearDeck.bind(this);
+        this.endGame = this.endGame.bind(this);
         this.resetGame = this.resetGame.bind(this);
         this.state = {
             style: { opacity: 0 },
@@ -83,6 +84,8 @@ class App extends React.Component {
         this.setState({
             modal: false,
             flipped: false
+        }, () => {
+            // this.endGame();    //test endgame
         });
     }
 
@@ -97,13 +100,17 @@ class App extends React.Component {
         //shuffle decks and end game after last card flip
         if (prevState.flipped !== this.state.flipped) {
             if (!this.state.gameDecks.length && !this.state.flipped) {
-                this.setState({
-                    modal: true,
-                    gameOver: true,
-                    gameDecks: stackDecks(promptData)
-                });
+                this.endGame();
             }
         }
+    }
+
+    endGame() {
+        this.setState({
+            modal: true,
+            gameOver: true,
+            gameDecks: stackDecks(promptData)   //reshuffle
+        });
     }
 
     resetGame() {
