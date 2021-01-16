@@ -1,6 +1,14 @@
 .discard {
     right: calc((50vw - 0.75 * var(--card-w)) / 2);
 
+    &::before {
+        @apply absolute w-full h-full rounded-full border border-pink-50 transform origin-right -translate-x-1/2 animate-ping;
+        content: "";
+        animation-duration: 3s;
+        animation-delay: 3s;
+        z-index: -1;
+    }
+
     &:hover,
     &:focus {
         & span {
@@ -9,13 +17,5 @@
         &::before {
             @apply bg-pink-50;
         }
-    }
-
-    &::before {
-        @apply absolute w-full h-full rounded-full border border-pink-50 transform origin-right -translate-x-1/2 animate-ping;
-        content: "";
-        animation-duration: 3s;
-        animation-delay: 3s;
-        z-index: -1;
     }
 }
