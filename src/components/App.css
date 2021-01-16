@@ -22,5 +22,9 @@ body {
 
     & .overlay {
         @apply fixed flex w-full h-full justify-center items-center;
+
+        & .Modal {
+            max-height: calc(100vh - .75rem);
+        }
     }
 }

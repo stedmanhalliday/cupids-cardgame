@@ -37,7 +37,7 @@ class Modal extends React.Component {
     render() {
         return (
             <div className="overlay">
-                <div ref={this.ModalRef} style={this.state.style} className="Modal fixed w-1/2 p-12 rounded-lg shadow-2xl bg-white text-center transition-all duration-500">
+                <div ref={this.ModalRef} style={this.state.style} className="Modal fixed overflow-y-auto m-3 px-8 py-12 sm:w-2/3 sm:m-0 xl:w-1/2 md:p-12 rounded-lg shadow-2xl bg-white text-center transition-all duration-500">
                     {this.props.children}
                 </div>
             </div>
