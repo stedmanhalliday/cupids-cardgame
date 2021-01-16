@@ -1,5 +1,5 @@
 .Card {
-    @apply absolute cursor-pointer transition-all transform-gpu duration-500;
+    @apply absolute scale-125 cursor-pointer transition-all transform-gpu duration-500;
     perspective: 64rem;
     width: var(--card-w);
     height: var(--card-h);

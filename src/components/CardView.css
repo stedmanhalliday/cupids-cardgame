@@ -1,5 +1,10 @@
 .discard {
-    right: calc((50vw - 0.75 * var(--card-w)) / 2);
+    bottom: calc((50vh - 0.75 * var(--card-h)) / 2);
+    
+    @media (min-width: 768px) {
+        right: calc((50vw - 0.75 * var(--card-w)) / 2);
+        bottom: initial;
+    }
 
     &::before {
         @apply absolute w-full h-full rounded-full border border-pink-50 transform origin-right -translate-x-1/2 animate-ping;
